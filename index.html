@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1014" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23090d10'/%3E%3Cpath d='M15 20h34v8H23v4h22v8H23v4h26v8H15z' fill='%237affca'/%3E%3C/svg%3E" />
+    <title>G2 Image Viewer</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <span class="eyebrow">EVEN REALITIES G2</span>
+        <h1>Image Viewer</h1>
+        <p>好きな画像を、G2向けのモノクロ表示へ変換して送信します。</p>
+      </header>
+
+      <section class="panel" aria-labelledby="select-title">
+        <div class="section-heading">
+          <span class="step">01</span>
+          <div>
+            <h2 id="select-title">画像を選ぶ</h2>
+            <p>JPEG・PNG・WebPなど、ブラウザで読める画像に対応しています。</p>
+          </div>
+        </div>
+
+        <label class="drop-zone" id="dropZone" for="imageInput">
+          <input id="imageInput" type="file" accept="image/*" />
+          <span class="upload-icon" aria-hidden="true">＋</span>
+          <strong>タップして画像を選択</strong>
+          <span>または、ここへドロップ</span>
+        </label>
+      </section>
+
+      <section class="panel preview-panel" aria-labelledby="preview-title">
+        <div class="section-heading">
+          <span class="step">02</span>
+          <div>
+            <h2 id="preview-title">仕上がりを調整</h2>
+            <p>グラス上の200 × 100px表示をプレビューします。</p>
+          </div>
+        </div>
+
+        <div class="g2-preview">
+          <canvas id="previewCanvas" width="200" height="100" aria-label="G2表示プレビュー"></canvas>
+          <span id="emptyPreview">画像を選択してください</span>
+        </div>
+
+        <div class="controls">
+          <label class="range-control" for="threshold">
+            <span>明るさのしきい値</span>
+            <output id="thresholdValue" for="threshold">128</output>
+            <input id="threshold" type="range" min="0" max="255" value="128" />
+          </label>
+          <label class="switch-row" for="invert">
+            <span>白黒を反転</span>
+            <input id="invert" type="checkbox" />
+          </label>
+        </div>
+      </section>
+
+      <section class="panel send-panel" aria-labelledby="send-title">
+        <div class="section-heading">
+          <span class="step">03</span>
+          <div>
+            <h2 id="send-title">G2へ表示</h2>
+            <p id="status" class="status" role="status">G2へ接続しています…</p>
+          </div>
+        </div>
+        <button id="sendButton" type="button" disabled>G2へ送信</button>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

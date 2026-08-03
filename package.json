@@ -1,0 +1,22 @@
+{
+  "name": "even-g2-image-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5173",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "simulator": "evenhub-simulator",
+    "qr": "evenhub qr --http --port 5173"
+  },
+  "dependencies": {
+    "@evenrealities/even_hub_sdk": "^0.0.7",
+    "@evenrealities/evenhub-cli": "^0.1.5",
+    "@evenrealities/evenhub-simulator": "^0.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}
