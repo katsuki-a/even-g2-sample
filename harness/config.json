@@ -1,0 +1,62 @@
+{
+  "activePhase": "concept",
+  "passScore": 85,
+  "weights": {
+    "concept": {
+      "story": 80,
+      "docs": 20,
+      "architecture": 0,
+      "release": 0
+    },
+    "implementation": {
+      "story": 35,
+      "docs": 10,
+      "architecture": 55,
+      "release": 0
+    },
+    "release": {
+      "story": 20,
+      "docs": 10,
+      "architecture": 30,
+      "release": 40
+    }
+  },
+  "requiredDocs": [
+    "docs/README.md",
+    "docs/concept.md",
+    "docs/requirements.md",
+    "docs/story.md",
+    "docs/architecture.md",
+    "docs/fitness.md",
+    "docs/loop-engineering.md",
+    "docs/iterations/TEMPLATE.md"
+  ],
+  "architecture": {
+    "requiredFiles": [
+      "src/app/controller.ts",
+      "src/content/load-story.ts",
+      "src/domain/story.ts",
+      "src/domain/engine.ts",
+      "src/domain/progress.ts",
+      "src/domain/view-model.ts",
+      "src/platform/even-input.ts",
+      "src/platform/even-renderer.ts",
+      "src/platform/image-queue.ts",
+      "src/platform/storage.ts",
+      "src/platform/clock.ts"
+    ],
+    "maxMainLines": 120,
+    "requiredScripts": [
+      "build",
+      "test",
+      "fitness",
+      "loop:check"
+    ],
+    "domainForbiddenTokens": [
+      "document.",
+      "window.",
+      "@evenrealities/even_hub_sdk"
+    ],
+    "mvpAllowedPermissions": []
+  }
+}

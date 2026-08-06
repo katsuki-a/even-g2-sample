@@ -1,0 +1,35 @@
+{
+  "simulator": {
+    "status": "pending",
+    "allPaths": false,
+    "restartResume": false,
+    "attachmentRetry": false,
+    "screenshotPaths": []
+  },
+  "hardware": {
+    "status": "pending",
+    "allPaths": false,
+    "g2Input": false,
+    "r1Input": false,
+    "lockedPhone": false,
+    "idleTwoMinutes": false,
+    "attachmentRetry": false
+  },
+  "userTest": {
+    "participants": 0,
+    "understoodHookUnder60Seconds": 0,
+    "continueRatingFourOrMore": 0
+  },
+  "narrativeReview": {
+    "hook": null,
+    "characterVoice": null,
+    "temporalMystery": null,
+    "choiceTension": null,
+    "endingPull": null,
+    "deviceFit": null
+  },
+  "openBugs": {
+    "p0": null,
+    "p1": null
+  }
+}
