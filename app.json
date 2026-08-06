@@ -1,32 +1,11 @@
 {
-  "package_id": "com.example.g2hardwarelab",
+  "package_id": "com.katsuki.noservice",
   "edition": "202601",
-  "name": "G2 Hardware Lab",
+  "name": "圏外 / NO SERVICE",
   "version": "1.0.0",
   "min_app_version": "2.0.0",
   "min_sdk_version": "0.0.12",
   "entrypoint": "index.html",
-  "permissions": [
-    {
-      "name": "g2-microphone",
-      "desc": "G2のマイク入力を受信し、音量レベルを確認するために使用します。"
-    },
-    {
-      "name": "phone-microphone",
-      "desc": "スマートフォンのマイク入力を受信し、音量レベルを確認するために使用します。"
-    },
-    {
-      "name": "location",
-      "desc": "スマートフォンの位置情報APIが利用できることを確認するために使用します。"
-    },
-    {
-      "name": "album",
-      "desc": "スマートフォンのアルバムからG2へ表示する画像を選ぶために使用します。"
-    },
-    {
-      "name": "camera",
-      "desc": "スマートフォンで撮影した画像をG2へ表示するために使用します。"
-    }
-  ],
-  "supported_languages": ["ja", "en"]
+  "permissions": [],
+  "supported_languages": ["ja"]
 }

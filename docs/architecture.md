@@ -33,6 +33,7 @@ src/
   platform/image-queue.ts  # 画像送信の直列化と再試行
   platform/storage.ts      # Even App local storage adapter
   platform/clock.ts        # 実時刻とテスト時刻
+  platform/evidence.ts     # 明示起動時だけのSimulator構造化証跡
   ui/phone.ts              # 設定、診断、デバッグ
   assets/story/            # 1-bit添付画像
 ```
@@ -47,19 +48,21 @@ type Progress = {
   choices: Record<string, string>
   flags: string[]
   rapport: number
+  selectedChoiceIndex: number
   revision: number
 }
 
 type Command =
   | { type: 'ADVANCE' }
   | { type: 'MOVE_SELECTION'; delta: -1 | 1 }
+  | { type: 'SET_SELECTION'; index: number }
   | { type: 'CONFIRM_CHOICE' }
   | { type: 'BACK' }
   | { type: 'RETRY_ATTACHMENT' }
 
 type Transition = {
   progress: Progress
-  effect?: 'SAVE' | 'SHOW_ATTACHMENT' | 'EXIT'
+  effects: Array<'SAVE' | 'SHOW_ATTACHMENT' | 'EXIT'>
 }
 ```
 
@@ -70,7 +73,7 @@ type Transition = {
 | 種別 | 用途 | 描画 |
 | --- | --- | --- |
 | `mail` | 日時、差出人、件名、本文 | テキスト差分更新 |
-| `choice` | 2〜3個の返信候補 | リストページへ再構築 |
+| `choice` | 2〜3個の返信候補 | カーソル付きテキストページへ再構築 |
 | `attachment` | 画像と短いキャプション | 画像ページへ再構築後、直列送信 |
 | `system` | 接続、削除、復元など | システム用テキスト差分更新 |
 | `ending` | 第1話の終端 | 終了選択を持つテキストページ |
@@ -84,13 +87,14 @@ type Transition = {
 - Body: 本文
 - Capture: 透明または最小テキストコンテナ1個
 
-本文更新だけなら`textContainerUpgrade`を使い、メールごとの全再構築を避ける。
+MVPではノード種別ごとの構造を確実に切り替えるため、表示更新を`rebuildPageContainer`へ統一する。
 
 ### ChoicePage
 
 - Header: `返信を選択`
-- List: 2〜3項目
-- Capture: リストコンテナ
+- Text: 2〜3項目。選択中の行へ`>`を付け、色だけに依存しない
+- Capture: 単一テキストコンテナ
+- Cursor: `textContainerUpgrade`で本文だけを差分更新し、イベント受付を維持する
 
 ### AttachmentPage
 
@@ -129,7 +133,7 @@ G2左右テンプルとR1は入力元を記録しても、MVPの物語結果に�
 
 | エラー | 振る舞い |
 | --- | --- |
-| ブリッジ未接続 | スマホ側に説明し、G2操作を無効化 |
+| ブリッジ未接続 | スマホ側プレビューへ切り替え、同じ物語操作を継続 |
 | 画像送信失敗 | 本文は維持し、`再受信`を選択可能にする |
 | 保存失敗 | セッションを継続し、画面へ非破壊の警告 |
 | 不明ノード | 最後の正常ノードへ戻し、診断IDを表示 |
@@ -137,18 +141,12 @@ G2左右テンプルとR1は入力元を記録しても、MVPの物語結果に�
 
 ## Hardware Labからの移行
 
-既存のAPI確認コードを一度に書き換えない。
-
-1. 画像BMP処理を`platform/image-queue.ts`へ移す。
-2. イベント正規化を`platform/even-input.ts`へ移す。
-3. 純粋なStory Engineを追加し、ブラウザなしでテストする。
-4. 新Rendererを追加してHardware Lab UIと並行検証する。
-5. 製品フローが実機で通った後、未使用の診断UIと権限を削除する。
+Hardware Labの診断UI、センサー処理、未使用権限は製品フローへ置き換え済みである。SDK固有処理は`platform/`、電話側プレビューは`ui/phone.ts`へ分離し、製品の物語状態を共有する。
 
 ## テスト境界
 
 - **Unit:** 遷移、テンプレート展開、保存マイグレーション、入力正規化
 - **Graph:** 全経路、到達可能性、終端、表示長、ビート順序
 - **Integration:** Fake Bridgeによるページ作成、画像キュー、再接続
-- **Simulator:** 表示、選択、添付、終了
+- **Simulator:** 最終`dist`の全27経路、3終端、表示、選択、添付、再起動復元、画像失敗再試行、終了
 - **Hardware:** フォント、画像、R1、ロック、再起動、アイドル復帰

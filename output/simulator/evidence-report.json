@@ -1,0 +1,754 @@
+{
+  "generatedAt": "2026-08-06T14:59:54.081Z",
+  "buildSource": "dist",
+  "simulatorVersion": "0.8.0",
+  "settleMilliseconds": 800,
+  "routeCount": 27,
+  "allRoutesPassed": true,
+  "endingNodeIds": [
+    "ending_connected",
+    "ending_intrusion",
+    "ending_loop"
+  ],
+  "routes": [
+    {
+      "choices": [
+        0,
+        0,
+        0
+      ],
+      "endingNodeId": "ending_connected",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_current",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_photo",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_continue",
+        "system_continue",
+        "ending_connected"
+      ],
+      "inputEvents": 14,
+      "screenshotPath": "output/simulator/route-000-ending_connected.png",
+      "durationMs": 14645
+    },
+    {
+      "choices": [
+        0,
+        0,
+        1
+      ],
+      "endingNodeId": "ending_loop",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_current",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_photo",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_disconnect",
+        "system_disconnect",
+        "ending_loop"
+      ],
+      "inputEvents": 15,
+      "screenshotPath": "output/simulator/route-001-ending_loop.png",
+      "durationMs": 15635
+    },
+    {
+      "choices": [
+        0,
+        0,
+        2
+      ],
+      "endingNodeId": "ending_intrusion",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_current",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_photo",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_last",
+        "system_intrusion",
+        "ending_intrusion"
+      ],
+      "inputEvents": 16,
+      "screenshotPath": "output/simulator/route-002-ending_intrusion.png",
+      "durationMs": 16343
+    },
+    {
+      "choices": [
+        0,
+        1,
+        0
+      ],
+      "endingNodeId": "ending_connected",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_current",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_phone",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_continue",
+        "system_continue",
+        "ending_connected"
+      ],
+      "inputEvents": 15,
+      "screenshotPath": "output/simulator/route-010-ending_connected.png",
+      "durationMs": 15430
+    },
+    {
+      "choices": [
+        0,
+        1,
+        1
+      ],
+      "endingNodeId": "ending_loop",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_current",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_phone",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_disconnect",
+        "system_disconnect",
+        "ending_loop"
+      ],
+      "inputEvents": 16,
+      "screenshotPath": "output/simulator/route-011-ending_loop.png",
+      "durationMs": 16326
+    },
+    {
+      "choices": [
+        0,
+        1,
+        2
+      ],
+      "endingNodeId": "ending_intrusion",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_current",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_phone",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_last",
+        "system_intrusion",
+        "ending_intrusion"
+      ],
+      "inputEvents": 17,
+      "screenshotPath": "output/simulator/route-012-ending_intrusion.png",
+      "durationMs": 17220
+    },
+    {
+      "choices": [
+        0,
+        2,
+        0
+      ],
+      "endingNodeId": "ending_connected",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_current",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_doubt",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_continue",
+        "system_continue",
+        "ending_connected"
+      ],
+      "inputEvents": 16,
+      "screenshotPath": "output/simulator/route-020-ending_connected.png",
+      "durationMs": 16330
+    },
+    {
+      "choices": [
+        0,
+        2,
+        1
+      ],
+      "endingNodeId": "ending_loop",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_current",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_doubt",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_disconnect",
+        "system_disconnect",
+        "ending_loop"
+      ],
+      "inputEvents": 17,
+      "screenshotPath": "output/simulator/route-021-ending_loop.png",
+      "durationMs": 17254
+    },
+    {
+      "choices": [
+        0,
+        2,
+        2
+      ],
+      "endingNodeId": "ending_intrusion",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_current",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_doubt",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_last",
+        "system_intrusion",
+        "ending_intrusion"
+      ],
+      "inputEvents": 18,
+      "screenshotPath": "output/simulator/route-022-ending_intrusion.png",
+      "durationMs": 18116
+    },
+    {
+      "choices": [
+        1,
+        0,
+        0
+      ],
+      "endingNodeId": "ending_connected",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_wrong",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_photo",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_continue",
+        "system_continue",
+        "ending_connected"
+      ],
+      "inputEvents": 15,
+      "screenshotPath": "output/simulator/route-100-ending_connected.png",
+      "durationMs": 15395
+    },
+    {
+      "choices": [
+        1,
+        0,
+        1
+      ],
+      "endingNodeId": "ending_loop",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_wrong",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_photo",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_disconnect",
+        "system_disconnect",
+        "ending_loop"
+      ],
+      "inputEvents": 16,
+      "screenshotPath": "output/simulator/route-101-ending_loop.png",
+      "durationMs": 16311
+    },
+    {
+      "choices": [
+        1,
+        0,
+        2
+      ],
+      "endingNodeId": "ending_intrusion",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_wrong",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_photo",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_last",
+        "system_intrusion",
+        "ending_intrusion"
+      ],
+      "inputEvents": 17,
+      "screenshotPath": "output/simulator/route-102-ending_intrusion.png",
+      "durationMs": 17107
+    },
+    {
+      "choices": [
+        1,
+        1,
+        0
+      ],
+      "endingNodeId": "ending_connected",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_wrong",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_phone",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_continue",
+        "system_continue",
+        "ending_connected"
+      ],
+      "inputEvents": 16,
+      "screenshotPath": "output/simulator/route-110-ending_connected.png",
+      "durationMs": 16435
+    },
+    {
+      "choices": [
+        1,
+        1,
+        1
+      ],
+      "endingNodeId": "ending_loop",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_wrong",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_phone",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_disconnect",
+        "system_disconnect",
+        "ending_loop"
+      ],
+      "inputEvents": 17,
+      "screenshotPath": "output/simulator/route-111-ending_loop.png",
+      "durationMs": 17226
+    },
+    {
+      "choices": [
+        1,
+        1,
+        2
+      ],
+      "endingNodeId": "ending_intrusion",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_wrong",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_phone",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_last",
+        "system_intrusion",
+        "ending_intrusion"
+      ],
+      "inputEvents": 18,
+      "screenshotPath": "output/simulator/route-112-ending_intrusion.png",
+      "durationMs": 18132
+    },
+    {
+      "choices": [
+        1,
+        2,
+        0
+      ],
+      "endingNodeId": "ending_connected",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_wrong",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_doubt",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_continue",
+        "system_continue",
+        "ending_connected"
+      ],
+      "inputEvents": 17,
+      "screenshotPath": "output/simulator/route-120-ending_connected.png",
+      "durationMs": 17317
+    },
+    {
+      "choices": [
+        1,
+        2,
+        1
+      ],
+      "endingNodeId": "ending_loop",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_wrong",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_doubt",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_disconnect",
+        "system_disconnect",
+        "ending_loop"
+      ],
+      "inputEvents": 18,
+      "screenshotPath": "output/simulator/route-121-ending_loop.png",
+      "durationMs": 18116
+    },
+    {
+      "choices": [
+        1,
+        2,
+        2
+      ],
+      "endingNodeId": "ending_intrusion",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_wrong",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_doubt",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_last",
+        "system_intrusion",
+        "ending_intrusion"
+      ],
+      "inputEvents": 19,
+      "screenshotPath": "output/simulator/route-122-ending_intrusion.png",
+      "durationMs": 19054
+    },
+    {
+      "choices": [
+        2,
+        0,
+        0
+      ],
+      "endingNodeId": "ending_connected",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_who",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_photo",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_continue",
+        "system_continue",
+        "ending_connected"
+      ],
+      "inputEvents": 16,
+      "screenshotPath": "output/simulator/route-200-ending_connected.png",
+      "durationMs": 16403
+    },
+    {
+      "choices": [
+        2,
+        0,
+        1
+      ],
+      "endingNodeId": "ending_loop",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_who",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_photo",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_disconnect",
+        "system_disconnect",
+        "ending_loop"
+      ],
+      "inputEvents": 17,
+      "screenshotPath": "output/simulator/route-201-ending_loop.png",
+      "durationMs": 17321
+    },
+    {
+      "choices": [
+        2,
+        0,
+        2
+      ],
+      "endingNodeId": "ending_intrusion",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_who",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_photo",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_last",
+        "system_intrusion",
+        "ending_intrusion"
+      ],
+      "inputEvents": 18,
+      "screenshotPath": "output/simulator/route-202-ending_intrusion.png",
+      "durationMs": 18216
+    },
+    {
+      "choices": [
+        2,
+        1,
+        0
+      ],
+      "endingNodeId": "ending_connected",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_who",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_phone",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_continue",
+        "system_continue",
+        "ending_connected"
+      ],
+      "inputEvents": 17,
+      "screenshotPath": "output/simulator/route-210-ending_connected.png",
+      "durationMs": 17117
+    },
+    {
+      "choices": [
+        2,
+        1,
+        1
+      ],
+      "endingNodeId": "ending_loop",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_who",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_phone",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_disconnect",
+        "system_disconnect",
+        "ending_loop"
+      ],
+      "inputEvents": 18,
+      "screenshotPath": "output/simulator/route-211-ending_loop.png",
+      "durationMs": 18017
+    },
+    {
+      "choices": [
+        2,
+        1,
+        2
+      ],
+      "endingNodeId": "ending_intrusion",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_who",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_phone",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_last",
+        "system_intrusion",
+        "ending_intrusion"
+      ],
+      "inputEvents": 19,
+      "screenshotPath": "output/simulator/route-212-ending_intrusion.png",
+      "durationMs": 19141
+    },
+    {
+      "choices": [
+        2,
+        2,
+        0
+      ],
+      "endingNodeId": "ending_connected",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_who",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_doubt",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_continue",
+        "system_continue",
+        "ending_connected"
+      ],
+      "inputEvents": 18,
+      "screenshotPath": "output/simulator/route-220-ending_connected.png",
+      "durationMs": 18334
+    },
+    {
+      "choices": [
+        2,
+        2,
+        1
+      ],
+      "endingNodeId": "ending_loop",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_who",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_doubt",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_disconnect",
+        "system_disconnect",
+        "ending_loop"
+      ],
+      "inputEvents": 19,
+      "screenshotPath": "output/simulator/route-221-ending_loop.png",
+      "durationMs": 19242
+    },
+    {
+      "choices": [
+        2,
+        2,
+        2
+      ],
+      "endingNodeId": "ending_intrusion",
+      "observedNodeIds": [
+        "mail_hook",
+        "choice_year",
+        "mail_year_who",
+        "mail_2008",
+        "choice_proof",
+        "mail_proof_doubt",
+        "attachment_portrait",
+        "mail_portrait",
+        "mail_identity",
+        "mail_paradox",
+        "choice_connection",
+        "mail_connect_last",
+        "system_intrusion",
+        "ending_intrusion"
+      ],
+      "inputEvents": 20,
+      "screenshotPath": "output/simulator/route-222-ending_intrusion.png",
+      "durationMs": 20129
+    }
+  ],
+  "restartResume": {
+    "nodeId": "attachment_portrait",
+    "beforeRestart": "output/simulator/restart-before.png",
+    "afterRestart": "output/simulator/restart-after.png"
+  },
+  "attachmentRetry": {
+    "failureScreenshot": "output/simulator/attachment-retry-error.png",
+    "successScreenshot": "output/simulator/attachment-retry-success.png",
+    "advancedTo": "mail_portrait"
+  }
+}

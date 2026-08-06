@@ -2,269 +2,65 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#07100d" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307100d'/%3E%3Cpath d='M14 20h36v7H22v7h24v7H22v7h28v7H14z' fill='%237affca'/%3E%3C/svg%3E" />
-    <title>G2 Hardware Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07100a" />
+    <meta name="description" content="Even Realities G2 short interactive novel NO SERVICE" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050906'/%3E%3Cpath d='M6 8h20v4H6zm0 7h14v4H6zm0 7h8v4H6z' fill='%236bff8f'/%3E%3C/svg%3E" />
+    <title>圏外 / NO SERVICE</title>
   </head>
   <body>
     <main class="app-shell">
-      <header class="hero">
-        <div class="hero-topline">
-          <span class="eyebrow">EVEN REALITIES G2 · SDK 0.0.12</span>
-          <span id="connectionBadge" class="connection-badge" data-state="connecting">接続中</span>
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">EVEN G2 INTERACTIVE FICTION</p>
+          <h1>圏外<span>NO SERVICE</span></h1>
         </div>
-        <h1>Hardware Lab</h1>
-        <p>G2とスマートフォンで公開されている入出力APIを、ひとつずつ実機確認するための診断アプリです。</p>
-        <p id="connectionStatus" class="hero-status" role="status">Even App Bridgeへ接続しています…</p>
+        <div id="connectionBadge" class="connection-badge" data-state="preview">接続待ち</div>
       </header>
 
-      <section class="capability-strip" aria-label="ハードウェア概要">
-        <div><span>OUTPUT</span><strong>576 × 288</strong><small>4-bit green display</small></div>
-        <div><span>INPUT</span><strong>Touch · R1 · IMU</strong><small>gesture &amp; motion</small></div>
-        <div><span>AUDIO</span><strong>4-mic PCM</strong><small>16 kHz / s16le / mono</small></div>
-      </section>
-
-      <section class="panel" aria-labelledby="output-title">
-        <div class="section-heading">
-          <span class="step">01</span>
-          <div>
-            <h2 id="output-title">G2への出力</h2>
-            <p>固定キャンバスへテキスト、リスト、4-bitグレースケール画像を表示します。</p>
-          </div>
+      <section class="experience" aria-label="第1話 届いてる？">
+        <div class="episode-meta" aria-hidden="true">
+          <span>EPISODE 01</span>
+          <strong>届いてる？</strong>
+          <span id="storyProgress">01 / 14</span>
         </div>
 
-        <div class="api-grid output-grid">
-          <article class="api-card">
-            <div class="api-card-heading">
-              <span class="hardware-tag">G2 DISPLAY</span>
-              <code>TextContainer</code>
+        <div class="glasses-frame">
+          <article id="gameScreen" class="game-screen" data-kind="mail" aria-live="polite">
+            <header id="screenHeader" class="screen-header">--:-- / 圏外 / --</header>
+            <div class="scanline" aria-hidden="true"></div>
+            <div class="screen-content">
+              <p id="screenKicker" class="screen-kicker">INBOX RECOVERY</p>
+              <h2 id="screenTitle">受信中…</h2>
+              <p id="screenBody" class="screen-body">古い通信規格を探索しています。</p>
+              <ol id="screenChoices" class="screen-choices" hidden></ol>
+              <img id="screenImage" class="screen-image" alt="ミナから届いた粗いモノクロ写真" hidden />
             </div>
-            <h3>テキスト表示</h3>
-            <p>ページ作成と、ちらつきの少ない差分更新を確認します。</p>
-            <div class="button-row">
-              <button id="showTextButton" class="page-action" data-requires-bridge type="button" disabled>表示</button>
-              <button id="updateTextButton" class="secondary page-action" data-requires-bridge type="button" disabled>内容を更新</button>
-            </div>
-          </article>
-
-          <article class="api-card">
-            <div class="api-card-heading">
-              <span class="hardware-tag">G2 DISPLAY</span>
-              <code>ListContainer</code>
-            </div>
-            <h3>ネイティブリスト</h3>
-            <p>選択枠、上下スワイプ、現在の項目をまとめて確認します。</p>
-            <button id="showListButton" class="page-action" data-requires-bridge type="button" disabled>リストを表示</button>
-          </article>
-
-          <article class="api-card">
-            <div class="api-card-heading">
-              <span class="hardware-tag">G2 DISPLAY</span>
-              <code>updateImageRawData</code>
-            </div>
-            <h3>テストパターン</h3>
-            <p>200 × 100pxの1-bit BMPを生成し、画像コンテナへ送ります。</p>
-            <button id="showPatternButton" class="page-action" data-requires-bridge type="button" disabled>パターンを表示</button>
+            <footer id="screenFooter" class="screen-footer">決定 つぎへ</footer>
           </article>
         </div>
 
-        <div class="image-workbench">
-          <div>
-            <h3>任意画像を送る</h3>
-            <p>端末で選んだ画像を縮小・二値化します。SDKの仕様上限は288 × 144pxですが、この試験は転送の軽い200 × 100pxです。</p>
-            <div class="image-source-row">
-              <label class="file-button" for="imageInput">
-                <input id="imageInput" type="file" accept="image/*" />
-                ブラウザ選択
-              </label>
-              <button id="albumButton" class="secondary" data-requires-bridge type="button" disabled>スマホのアルバム</button>
-              <button id="cameraButton" class="secondary" data-requires-bridge type="button" disabled>スマホのカメラ</button>
-            </div>
-            <p id="imageName" class="compact-status">画像は未選択です</p>
-            <div class="image-controls">
-              <label for="threshold">
-                <span>二値化しきい値</span>
-                <output id="thresholdValue" for="threshold">128</output>
-                <input id="threshold" type="range" min="0" max="255" value="128" />
-              </label>
-              <label class="check-row" for="invert">
-                <input id="invert" type="checkbox" />
-                白黒を反転
-              </label>
-            </div>
-            <button id="sendImageButton" class="page-action" data-requires-bridge type="button" disabled>選択画像をG2へ表示</button>
+        <div class="control-panel">
+          <div class="input-cluster" aria-label="入力シミュレーション">
+            <button type="button" data-input="up" aria-label="上">↑</button>
+            <button type="button" data-input="down" aria-label="下">↓</button>
+            <button type="button" data-input="confirm" class="confirm">決定</button>
+            <button type="button" data-input="back" class="back">戻る</button>
           </div>
-          <div class="g2-preview">
-            <canvas id="previewCanvas" width="200" height="100" aria-label="G2画像プレビュー"></canvas>
-            <span id="emptyPreview">200 × 100 preview</span>
+          <div class="status-cluster">
+            <span>LINK STATE</span>
+            <strong id="appStatus">INITIALIZING…</strong>
+            <small>キーボード: ↑ ↓ Enter Esc</small>
           </div>
+          <button id="resetButton" class="reset-button" type="button">最初から</button>
         </div>
       </section>
 
-      <section class="panel" aria-labelledby="input-title">
-        <div class="section-heading">
-          <span class="step">02</span>
-          <div>
-            <h2 id="input-title">G2 / R1からの入力</h2>
-            <p>イベントを常時購読します。テンプルかR1で、押す・2回押す・上下スワイプを試してください。</p>
-          </div>
-        </div>
-
-        <div class="api-grid">
-          <article class="api-card event-card">
-            <div class="api-card-heading">
-              <span class="hardware-tag">TOUCH / R1</span>
-              <code>onEvenHubEvent</code>
-            </div>
-            <h3>ジェスチャーイベント</h3>
-            <p>入力元、イベント種別、リスト選択項目を時刻付きで記録します。</p>
-            <div class="event-log-wrap">
-              <p id="eventEmpty" class="empty-log">まだイベントはありません</p>
-              <ol id="eventLog" class="event-log" aria-live="polite"></ol>
-            </div>
-            <button id="clearEventsButton" class="secondary" type="button">ログを消去</button>
-          </article>
-
-          <article class="api-card">
-            <div class="api-card-heading">
-              <span class="hardware-tag">G2 / PHONE MIC</span>
-              <code>audioControl</code>
-            </div>
-            <h3>マイクPCM</h3>
-            <p>音声自体は保存せず、16 kHz / s16le / monoの受信レベルだけを計測します。</p>
-            <label class="field-label" for="audioSource">入力元</label>
-            <select id="audioSource">
-              <option value="glasses">G2 4マイク</option>
-              <option value="phone">スマホマイク</option>
-            </select>
-            <div class="audio-meter" aria-label="マイク入力レベル"><span id="audioLevel"></span></div>
-            <div class="metric-grid">
-              <div><span>RMS</span><strong id="audioRms">-∞ dB</strong></div>
-              <div><span>FRAMES</span><strong id="audioFrames">0</strong></div>
-              <div><span>BYTES</span><strong id="audioBytes">0</strong></div>
-            </div>
-            <div class="button-row">
-              <button id="startAudioButton" data-requires-bridge type="button" disabled>入力開始</button>
-              <button id="stopAudioButton" class="secondary" data-requires-bridge type="button" disabled>停止</button>
-            </div>
-          </article>
-
-          <article class="api-card">
-            <div class="api-card-heading">
-              <span class="hardware-tag">G2 IMU</span>
-              <code>imuControl</code>
-            </div>
-            <h3>モーションデータ</h3>
-            <p>実機のIMUからX/Y/Zを連続受信します。ペース値はHzではなくプロトコル値です。</p>
-            <label class="field-label" for="imuPace">レポートペース</label>
-            <select id="imuPace">
-              <option value="100">P100</option>
-              <option value="300">P300</option>
-              <option value="500" selected>P500</option>
-              <option value="700">P700</option>
-              <option value="1000">P1000</option>
-            </select>
-            <div class="axis-grid">
-              <div><span>X</span><strong id="imuX">—</strong></div>
-              <div><span>Y</span><strong id="imuY">—</strong></div>
-              <div><span>Z</span><strong id="imuZ">—</strong></div>
-            </div>
-            <p class="compact-status">samples: <span id="imuSamples">0</span></p>
-            <div class="button-row">
-              <button id="startImuButton" data-requires-bridge type="button" disabled>IMU開始</button>
-              <button id="stopImuButton" class="secondary" data-requires-bridge type="button" disabled>停止</button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="panel" aria-labelledby="companion-title">
-        <div class="section-heading">
-          <span class="step">03</span>
-          <div>
-            <h2 id="companion-title">状態とスマホ側API</h2>
-            <p>G2の状態を読み、Even Appを実行しているスマートフォンの機能も確認します。</p>
-          </div>
-        </div>
-
-        <div class="api-grid">
-          <article class="api-card">
-            <div class="api-card-heading">
-              <span class="hardware-tag">DEVICE</span>
-              <code>getDeviceInfo</code>
-            </div>
-            <h3>デバイス状態</h3>
-            <dl class="data-list">
-              <div><dt>model</dt><dd id="deviceModel">—</dd></div>
-              <div><dt>connection</dt><dd id="deviceConnection">—</dd></div>
-              <div><dt>battery</dt><dd id="deviceBattery">—</dd></div>
-              <div><dt>wearing</dt><dd id="deviceWearing">—</dd></div>
-              <div><dt>charging / case</dt><dd id="deviceCharging">—</dd></div>
-              <div><dt>launch source</dt><dd id="launchSource">未受信</dd></div>
-              <div><dt>user</dt><dd id="userInfo">—</dd></div>
-            </dl>
-            <button id="refreshDeviceButton" class="secondary" data-requires-bridge type="button" disabled>再取得</button>
-          </article>
-
-          <article class="api-card">
-            <div class="api-card-heading">
-              <span class="hardware-tag">PHONE GPS</span>
-              <code>getAppLocation</code>
-            </div>
-            <h3>位置情報</h3>
-            <dl class="data-list">
-              <div><dt>latitude</dt><dd id="latitude">—</dd></div>
-              <div><dt>longitude</dt><dd id="longitude">—</dd></div>
-              <div><dt>accuracy</dt><dd id="locationAccuracy">—</dd></div>
-              <div><dt>updates</dt><dd id="locationUpdates">0</dd></div>
-            </dl>
-            <div class="button-row three-buttons">
-              <button id="getLocationButton" data-requires-bridge type="button" disabled>現在地</button>
-              <button id="startLocationButton" class="secondary" data-requires-bridge type="button" disabled>連続開始</button>
-              <button id="stopLocationButton" class="secondary" data-requires-bridge type="button" disabled>停止</button>
-            </div>
-          </article>
-
-          <article class="api-card">
-            <div class="api-card-heading">
-              <span class="hardware-tag">EVEN APP</span>
-              <code>localStorage bridge</code>
-            </div>
-            <h3>ホスト保存領域</h3>
-            <p>現在時刻を書き込み、同じキーをすぐ読み戻します。</p>
-            <p id="storageValue" class="value-box">未実行</p>
-            <button id="storageButton" data-requires-bridge type="button" disabled>書き込み＋読み出し</button>
-          </article>
-        </div>
-      </section>
-
-      <section class="panel inventory-panel" aria-labelledby="inventory-title">
-        <div class="section-heading">
-          <span class="step">04</span>
-          <div>
-            <h2 id="inventory-title">公開APIの範囲</h2>
-            <p>このアプリで触る範囲と、公開SDKで提供されていない機能です。</p>
-          </div>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>対象</th><th>入出力</th><th>API / 状態</th></tr></thead>
-            <tbody>
-              <tr><td>G2</td><td>表示</td><td><code>create / rebuild / text / image</code></td></tr>
-              <tr><td>G2 / R1</td><td>押す・2回押す・上下スワイプ</td><td><code>onEvenHubEvent</code></td></tr>
-              <tr><td>G2</td><td>4マイク、IMU、装着/電池状態</td><td><code>audioControl / imuControl / device status</code></td></tr>
-              <tr><td>スマホ</td><td>マイク、GPS、アルバム、カメラ</td><td><code>audio / location / image asset</code></td></tr>
-              <tr class="unavailable"><td>非公開</td><td>G2音声出力、G2カメラ、直接BLE、任意描画</td><td>公開SDK APIなし</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <button id="shutdownButton" class="danger secondary" data-requires-bridge type="button" disabled>G2で終了確認を表示</button>
-      </section>
-
-      <p id="apiStatus" class="api-status" role="status">接続待ち</p>
+      <footer class="page-footer">
+        <p>最先端の眼鏡に、2008年の携帯メールが届く。</p>
+        <span>TEXT / MONO BMP / NO NETWORK</span>
+      </footer>
     </main>
-
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

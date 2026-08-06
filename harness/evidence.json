@@ -1,10 +1,21 @@
 {
   "simulator": {
-    "status": "pending",
-    "allPaths": false,
-    "restartResume": false,
-    "attachmentRetry": false,
-    "screenshotPaths": []
+    "status": "passed",
+    "allPaths": true,
+    "restartResume": true,
+    "attachmentRetry": true,
+    "testedVersion": "0.8.0",
+    "pathCount": 27,
+    "reportPath": "output/simulator/evidence-report.json",
+    "screenshotPaths": [
+      "output/simulator/route-000-ending_connected-black.png",
+      "output/simulator/route-001-ending_loop-black.png",
+      "output/simulator/route-002-ending_intrusion-black.png",
+      "output/simulator/restart-after-black.png",
+      "output/simulator/attachment-retry-error-black.png",
+      "output/simulator/attachment-retry-success-black.png",
+      "output/playwright/phone-choice-final.png"
+    ]
   },
   "hardware": {
     "status": "pending",
@@ -29,7 +40,7 @@
     "deviceFit": null
   },
   "openBugs": {
-    "p0": null,
-    "p1": null
+    "p0": 0,
+    "p1": 0
   }
 }

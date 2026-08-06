@@ -10,5 +10,6 @@
 4. [アーキテクチャ](./architecture.md)
 5. [適応度関数](./fitness.md)
 6. [ループエンジニアリング](./loop-engineering.md)
+7. [リリース検証手順](./release-validation.md)
 
 機械可読な正本は[`content/story.json`](../content/story.json)、評価器は[`harness/`](../harness/)に置きます。文章とデータが矛盾した場合、実行時の台詞・遷移は`content/story.json`を優先し、意図と完成条件はこのディレクトリを優先します。

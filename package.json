@@ -1,21 +1,22 @@
 {
-  "name": "even-g2-hardware-lab",
+  "name": "no-service-even-g2",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 5173",
     "build": "tsc --noEmit && vite build",
-    "test": "node --test harness/*.test.mjs",
+    "test": "node --no-warnings --experimental-transform-types --test harness/*.test.mjs src/*/*.test.ts",
     "fitness": "node harness/fitness.mjs",
     "fitness:implementation": "node harness/fitness.mjs --phase implementation",
     "fitness:release": "node harness/fitness.mjs --phase release",
     "loop:check": "npm test && npm run fitness && npm run build",
     "loop:check:implementation": "npm test && npm run fitness:implementation && npm run build",
     "loop:check:release": "npm test && npm run fitness:release && npm run build",
-    "pack": "npm run build && evenhub pack app.json dist -o g2-hardware-lab.ehpk",
+    "pack": "npm run build && evenhub pack app.json dist -o no-service.ehpk",
     "preview": "vite preview --host 0.0.0.0 --port 4173",
     "simulator": "evenhub-simulator",
+    "simulator:evidence": "npm run build && node scripts/verify-simulator.mjs",
     "qr": "evenhub qr --http --port 5173"
   },
   "dependencies": {
