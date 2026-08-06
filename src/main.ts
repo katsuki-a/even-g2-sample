@@ -2,6 +2,7 @@ import { EvenAppBridge, waitForEvenAppBridge, type EvenHubEvent } from '@evenrea
 import './styles.css'
 import { CompositeRenderer, StoryController, type RendererPort } from './app/controller.ts'
 import { episodeOne } from './content/load-story.ts'
+import type { AttachmentNode } from './domain/story.ts'
 import { RealClock } from './platform/clock.ts'
 import { EvidenceSession } from './platform/evidence.ts'
 import { normalizeEvenInput } from './platform/even-input.ts'
@@ -14,14 +15,21 @@ import {
 } from './platform/storage.ts'
 import { PhoneView } from './ui/phone.ts'
 
-const portraitUrl = new URL('./assets/story/pic_0047.bmp', import.meta.url)
+const attachmentUrls = import.meta.glob<string>('./assets/story/*.bmp', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
 
 function hasNativeBridge(): boolean {
   return 'flutter_inappwebview' in window
 }
 
-async function loadPortrait(): Promise<number[]> {
-  const response = await fetch(portraitUrl)
+async function loadAttachment(node: AttachmentNode): Promise<number[]> {
+  const assetKey = node.asset.replace('src/assets/story/', './assets/story/')
+  const assetUrl = attachmentUrls[assetKey]
+  if (!assetUrl) throw new Error(`未登録の添付画像です: ${node.asset}`)
+  const response = await fetch(assetUrl)
   if (!response.ok) throw new Error(`添付画像を読み込めません: ${response.status}`)
   return Array.from(new Uint8Array(await response.arrayBuffer()))
 }
@@ -65,7 +73,7 @@ async function boot(): Promise<void> {
     renderer,
     storage,
     clock: new RealClock(),
-    attachments: { load: loadPortrait },
+    attachments: { load: loadAttachment },
     playerName,
     batteryLevel,
   })

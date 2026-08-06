@@ -69,7 +69,7 @@ test('添付送信失敗を表示し、決定で同じノードのまま再試�
   assert.equal(controller.currentProgress.currentNodeId, 'attachment_portrait')
 
   await controller.dispatch('confirm')
-  assert.equal(controller.currentProgress.currentNodeId, 'mail_portrait')
+  assert.equal(controller.currentProgress.currentNodeId, 'mail_identity')
 })
 
 test('SDKの絶対indexをcontrollerの選択状態へ反映する', async () => {

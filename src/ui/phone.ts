@@ -20,6 +20,7 @@ export class PhoneView implements RendererPort {
   private readonly status = element<HTMLElement>('#appStatus')
   private readonly connection = element<HTMLElement>('#connectionBadge')
   private imageUrl?: string
+  private attachmentNodeId?: string
   private inputHandler: (input: LogicalInput) => void = () => undefined
   private resetHandler: () => void = () => undefined
 
@@ -61,6 +62,10 @@ export class PhoneView implements RendererPort {
   }
 
   async render(viewModel: StoryViewModel): Promise<void> {
+    if (viewModel.kind === 'attachment' && viewModel.nodeId !== this.attachmentNodeId) {
+      this.attachmentNodeId = viewModel.nodeId
+      this.image.removeAttribute('src')
+    }
     this.screen.dataset.kind = viewModel.kind
     this.header.textContent = viewModel.header
     this.kicker.textContent = viewModel.kicker

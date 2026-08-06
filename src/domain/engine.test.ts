@@ -14,7 +14,7 @@ function advanceToDecision(progress: Progress): Progress {
   }
 }
 
-test('全27経路が14ノードで3種類の終端へ到達する', () => {
+test('全27経路が20ノードで3種類の終端へ到達する', () => {
   const completed: Progress[] = []
 
   function explore(input: Progress): void {
@@ -38,11 +38,11 @@ test('全27経路が14ノードで3種類の終端へ到達する', () => {
   explore(createProgress(episodeOne))
   assert.equal(completed.length, 27)
   assert.deepEqual(new Set(completed.map((progress) => progress.currentNodeId)), new Set([
-    'ending_connected',
-    'ending_loop',
-    'ending_intrusion',
+    'ending_saved',
+    'ending_unwritten',
+    'ending_recipient',
   ]))
-  assert.ok(completed.every((progress) => progress.visitedNodeIds.length === 14))
+  assert.ok(completed.every((progress) => progress.visitedNodeIds.length === 20))
 })
 
 test('選択は周回し、効果と確定地点を一度だけ保存する', () => {
@@ -50,10 +50,21 @@ test('選択は周回し、効果と確定地点を一度だけ保存する', ()
   progress = reduceStory(episodeOne, progress, { type: 'MOVE_SELECTION', delta: -1 }).progress
   assert.equal(progress.selectedChoiceIndex, 2)
   const transition = reduceStory(episodeOne, progress, { type: 'CONFIRM_CHOICE' })
-  assert.equal(transition.progress.currentNodeId, 'mail_year_who')
-  assert.equal(transition.progress.choices.choice_year, 'ask_identity')
-  assert.deepEqual(transition.progress.flags, ['asked-identity-first'])
+  assert.equal(transition.progress.currentNodeId, 'mail_year_mina')
+  assert.equal(transition.progress.choices.choice_year, 'ask_mina')
+  assert.deepEqual(transition.progress.flags, ['named-mina-first'])
   assert.deepEqual(transition.effects, ['SAVE'])
+})
+
+test('ENDは決定で表示を保持し、戻る操作だけが正規終了する', () => {
+  const endingProgress = {
+    ...createProgress(episodeOne),
+    currentNodeId: 'ending_saved',
+    visitedNodeIds: ['mail_hook', 'ending_saved'],
+  }
+
+  assert.deepEqual(reduceStory(episodeOne, endingProgress, { type: 'ADVANCE' }).effects, [])
+  assert.deepEqual(reduceStory(episodeOne, endingProgress, { type: 'BACK' }).effects, ['EXIT'])
 })
 
 test('同じ初期状態と操作列は同じ進行状態になる', () => {

@@ -64,7 +64,7 @@ export function reduceStory(story: Story, progress: Progress, command: Command):
   }
 
   if (node.type === 'choice') return { progress, effects: [] }
-  if (node.type === 'ending') return { progress, effects: ['EXIT'] }
+  if (node.type === 'ending') return { progress, effects: [] }
 
   return {
     progress: visit(progress, node.next),

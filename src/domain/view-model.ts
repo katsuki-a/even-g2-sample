@@ -41,7 +41,8 @@ export function toViewModel(story: Story, progress: Progress, context: ViewConte
   const node = nodeAt(story, progress.currentNodeId)
   const battery = context.batteryLevel === undefined ? '--' : `${context.batteryLevel}%`
   const header = `${twoDigits(context.now.getHours())}:${twoDigits(context.now.getMinutes())}  /  圏外  /  ${battery}`
-  const progressLabel = `${Math.min(progress.visitedNodeIds.length, 14).toString().padStart(2, '0')} / 14`
+  const pathNodeCount = story.meta.targetPathNodes?.max ?? story.nodes.length
+  const progressLabel = `${Math.min(progress.visitedNodeIds.length, pathNodeCount).toString().padStart(2, '0')} / ${pathNodeCount}`
   const common = {
     kind: node.type,
     nodeId: node.id,
@@ -94,6 +95,6 @@ export function toViewModel(story: Story, progress: Progress, context: ViewConte
     kicker: 'EPISODE 01 / END',
     title: node.title,
     body: interpolate(node.body, context),
-    footer: '決定 終了  /  スマホで最初から',
+    footer: 'END表示を保持  /  戻る 終了',
   }
 }

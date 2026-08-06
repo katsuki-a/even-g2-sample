@@ -4,6 +4,10 @@ export type StoryMeta = {
   englishTitle: string
   episodeTitle: string
   startNodeId: string
+  targetPathNodes?: {
+    min: number
+    max: number
+  }
 }
 
 export type ChoiceEffect = {

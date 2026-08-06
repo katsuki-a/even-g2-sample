@@ -235,7 +235,6 @@ async function drive(feed, choiceIndexes, { stopAt } = {}) {
     const nodeId = expected[offset]
     const node = nodes.get(nodeId)
     if (!node) throw new Error(`Unknown node ${nodeId}`)
-    if (node.type === 'attachment') await waitForAttachment(feed)
     if (node.id === stopAt || node.type === 'ending') break
 
     if (node.type === 'choice') {
@@ -261,6 +260,7 @@ async function drive(feed, choiceIndexes, { stopAt } = {}) {
       marker,
       10_000,
     )
+    if (nodes.get(nextNodeId)?.type === 'attachment') await waitForAttachment(feed, marker)
     observed.push(nextNodeId)
   }
   return observed
@@ -275,9 +275,17 @@ async function verifyRoute(choiceIndexes) {
     const observedNodeIds = await drive(feed, choiceIndexes)
     const endingNodeId = observedNodeIds.at(-1)
     const image = await screenshot(`route-${routeName}-${endingNodeId}.png`)
-    const marker = feed.marker()
+    const holdMarker = feed.marker()
     await input('click')
-    await feed.waitFor((event) => event.phase === 'exit', `${routeName} clean exit`, marker)
+    await feed.waitFor(
+      (event) => event.phase === 'render' && event.nodeId === endingNodeId,
+      `${routeName} ending retained after confirm`,
+      holdMarker,
+    )
+    const retainedImage = await screenshot(`route-${routeName}-${endingNodeId}-retained.png`)
+    const exitMarker = feed.marker()
+    await input('double_click')
+    await feed.waitFor((event) => event.phase === 'exit', `${routeName} clean exit`, exitMarker)
     await feed.poll()
     const errors = feed.errors()
     if (errors.length > 0) throw new Error(`Console errors: ${JSON.stringify(errors)}`)
@@ -287,6 +295,7 @@ async function verifyRoute(choiceIndexes) {
       observedNodeIds,
       inputEvents: feed.evidence.filter((event) => event.phase === 'input').length,
       screenshotPath: image,
+      retainedScreenshotPath: retainedImage,
       durationMs: Date.now() - startedAt,
     }
   } finally {

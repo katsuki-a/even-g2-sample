@@ -7,12 +7,12 @@
     "episodeTitle": "届いてる？",
     "startNodeId": "mail_hook",
     "targetSessionMinutes": {
-      "min": 8,
-      "max": 12
+      "min": 6,
+      "max": 9
     },
     "targetPathNodes": {
-      "min": 14,
-      "max": 14
+      "min": 20,
+      "max": 20
     },
     "contentLimits": {
       "subjectChars": 24,
@@ -30,6 +30,9 @@
       "portrait",
       "identity",
       "paradox",
+      "death-record",
+      "false-sender",
+      "meta",
       "cliffhanger"
     ]
   },
@@ -39,12 +42,13 @@
   },
   "character": {
     "id": "mina",
-    "name": "ミナ",
-    "initialSender": "unknown",
-    "handle": "m_17",
+    "name": "樋口ミナ",
     "age": 19,
-    "date": "2008-08-17",
-    "location": "中古携帯店リレイ",
+    "statusIn2026": "deceased",
+    "dateOfDeath": "2008-06-08",
+    "location": "秋葉原・中古携帯店リレイ",
+    "apparentSender": "mina",
+    "actualSender": "M-17",
     "voice": [
       "観察を先に書き、感情を説明しすぎない",
       "不安になるほど短文になる",
@@ -56,10 +60,10 @@
       "id": "mail_hook",
       "type": "mail",
       "act": 1,
-      "sentAt": "2008-08-17T23:48:00+09:00",
+      "sentAt": "2008-06-08T11:51:00+09:00",
       "from": "unknown",
       "subject": "届いてる？",
-      "body": "これ、何回目かな。\n\n返事が来るまで\nずいぶんかかった。\n\nそっちは何年？",
+      "body": "これ、何周目かな。\n\n返事を待つあいだに\n店の時計だけ進む。\n\nそっちは何年？",
       "tags": ["hook"],
       "next": "choice_year"
     },
@@ -67,7 +71,7 @@
       "id": "choice_year",
       "type": "choice",
       "act": 1,
-      "prompt": "返信を選択",
+      "prompt": "最初の返信",
       "tags": ["agency"],
       "choices": [
         {
@@ -89,12 +93,12 @@
           }
         },
         {
-          "id": "ask_identity",
-          "label": "あなたは誰？",
-          "next": "mail_year_who",
+          "id": "ask_mina",
+          "label": "あなたはミナ？",
+          "next": "mail_year_mina",
           "effects": {
             "rapport": 0,
-            "flags": ["asked-identity-first"]
+            "flags": ["named-mina-first"]
           }
         }
       ]
@@ -103,112 +107,136 @@
       "id": "mail_year_current",
       "type": "mail",
       "act": 1,
-      "sentAt": "2008-08-17T23:50:00+09:00",
+      "sentAt": "2008-06-08T11:53:00+09:00",
       "from": "unknown",
-      "subject": "Re: 届いてる？",
-      "body": "{{currentYear}}年って……。\n\n冗談にしては\nちょっと未来すぎる。\n\nこっちは2008年。",
+      "subject": "18年",
+      "body": "{{currentYear}}年。\n数字だけなら信じる。\n\nこっちは2008年6月8日。\nさっきまで日曜の人混みだった。",
       "tags": ["date-gap", "character"],
-      "next": "mail_2008"
+      "next": "mail_street"
     },
     {
       "id": "mail_year_wrong",
       "type": "mail",
       "act": 1,
-      "sentAt": "2008-08-17T23:50:00+09:00",
+      "sentAt": "2008-06-08T11:53:00+09:00",
       "from": "unknown",
       "subject": "間違いなら",
-      "body": "どうして送信箱に\nあなたの宛先が入ってたの？\n\nこっちは2008年。\nそっちの日付を教えて。",
+      "body": "閉じて。\nでも次に開く人も、\n同じ三択を選ぶ。\n\nこっちは2008年6月8日。",
       "tags": ["date-gap", "character"],
-      "next": "mail_2008"
+      "next": "mail_street"
     },
     {
-      "id": "mail_year_who",
+      "id": "mail_year_mina",
       "type": "mail",
       "act": 1,
-      "sentAt": "2008-08-17T23:50:00+09:00",
+      "sentAt": "2008-06-08T11:53:00+09:00",
       "from": "unknown",
-      "subject": "同じ質問",
-      "body": "こっちも聞きたい。\n\n送信箱には最初から\nあなたの宛先が入ってた。\n日付は2008年8月17日。",
+      "subject": "どうして名前を",
+      "body": "ミナ、と表示されてる？\nまだ名乗ってないのに。\n\nこっちは2008年6月8日。\nその名前は、まだ使わないで。",
       "tags": ["date-gap", "character"],
-      "next": "mail_2008"
+      "next": "mail_street"
     },
     {
-      "id": "mail_2008",
+      "id": "mail_street",
       "type": "mail",
       "act": 1,
-      "sentAt": "2008-08-17T23:53:00+09:00",
+      "sentAt": "2008-06-08T11:58:00+09:00",
       "from": "m_17",
-      "subject": "この携帯",
-      "body": "中古携帯の初期化中に\n宛先のない下書きを見つけた。\n\n送信したら、あなたに届いた。\n説明はそれだけ。",
+      "subject": "未送信箱",
+      "body": "中古携帯の未送信箱に\nあなたの宛先があった。\n\n店は秋葉原の裏。\n中央通りから急に人が消えた。\n長いクラクション。",
       "tags": ["proof"],
-      "next": "choice_proof"
+      "next": "attachment_street"
     },
     {
-      "id": "choice_proof",
+      "id": "attachment_street",
+      "type": "attachment",
+      "act": 1,
+      "fileName": "PIC_0119.BMP",
+      "fileSizeLabel": "18.4 KB",
+      "asset": "src/assets/story/pic_0119.bmp",
+      "assetStatus": "ready",
+      "alt": "半開きのシャッター越しに、人の消えた通りと放置された傘が見える",
+      "caption": "11:59 / 店内カメラ / MONO",
+      "tags": ["evidence"],
+      "next": "mail_elapsed"
+    },
+    {
+      "id": "mail_elapsed",
+      "type": "mail",
+      "act": 1,
+      "sentAt": "2008-06-08T12:02:00+09:00",
+      "from": "m_17",
+      "subject": "十一分",
+      "body": "もう返信？\nそっちは数秒みたいだね。\n\nこっちは11分。\n外で何か倒れる音。\nサイレンが増えてる。",
+      "tags": ["character", "temporal-asymmetry"],
+      "next": "choice_safety"
+    },
+    {
+      "id": "choice_safety",
       "type": "choice",
       "act": 2,
-      "prompt": "返信を選択",
+      "prompt": "12:02の相手へ",
       "tags": ["agency"],
       "choices": [
         {
-          "id": "request_photo",
-          "label": "写真を送って",
-          "next": "mail_proof_photo",
+          "id": "avoid_back_door",
+          "label": "裏口から離れて",
+          "next": "mail_safety_back",
           "effects": {
             "rapport": 1,
-            "flags": ["requested-photo"]
+            "flags": ["warned-back-door"]
           }
         },
         {
-          "id": "ask_phone",
-          "label": "その携帯について",
-          "next": "mail_proof_phone",
+          "id": "call_emergency",
+          "label": "119番、店内にいて",
+          "next": "mail_safety_call",
           "effects": {
             "rapport": 1,
-            "flags": ["asked-phone"]
+            "flags": ["advised-shelter"]
           }
         },
         {
-          "id": "express_doubt",
-          "label": "まだ信じられない",
-          "next": "mail_proof_doubt",
+          "id": "discard_phone",
+          "label": "その端末を捨てて",
+          "next": "mail_safety_discard",
           "effects": {
             "rapport": 0,
-            "flags": ["doubted-proof"]
+            "flags": ["asked-discard"]
           }
         }
       ]
     },
     {
-      "id": "mail_proof_photo",
+      "id": "mail_safety_back",
       "type": "mail",
       "act": 2,
-      "sentAt": "2008-08-17T23:55:00+09:00",
+      "sentAt": "2008-06-08T12:04:00+09:00",
       "from": "m_17",
-      "subject": "添付する",
-      "body": "写真なら日付の証明になる？\n\nこの端末、画像は20KBまで。\nだいぶ縮めるけど文句なしで。",
+      "subject": "裏口",
+      "body": "そこで、この端末を拾った。\nそこへ戻るな、だね。\n\n倉庫へ行く。\n先に顔を残す。",
       "tags": ["character"],
       "next": "attachment_portrait"
     },
     {
-      "id": "mail_proof_phone",
+      "id": "mail_safety_call",
       "type": "mail",
       "act": 2,
-      "sentAt": "2008-08-17T23:55:00+09:00",
+      "sentAt": "2008-06-08T12:04:00+09:00",
       "from": "m_17",
-      "subject": "型番なし",
-      "body": "型番もキャリア名も消えてる。\n残ってるのはメールと\n小さい画像の機能だけ。\n\nその画像を送ってみる。",
+      "subject": "通話は圏外",
+      "body": "119は繋がらない。\nこのメールだけ。\n\n机の下にいる。\n未来なら、顔で誰か分かる？",
       "tags": ["character"],
       "next": "attachment_portrait"
     },
     {
-      "id": "mail_proof_doubt",
+      "id": "mail_safety_discard",
       "type": "mail",
       "act": 2,
-      "sentAt": "2008-08-17T23:55:00+09:00",
+      "sentAt": "2008-06-08T12:04:00+09:00",
       "from": "m_17",
-      "subject": "正常",
-      "body": "信じない方が正常。\n私も未来メールを信じてない。\n\nでも返信は来た。\n画像も試してみる。",
+      "subject": "戻ってきた",
+      "body": "捨てた。画面も割れた。\nでも机の上に戻ってる。\n\n悪趣味。\n顔だけ送る。",
       "tags": ["character"],
       "next": "attachment_portrait"
     },
@@ -223,171 +251,195 @@
       "alt": "粗い1-bit画像。作業ジャケット姿の少女が携帯を掲げている",
       "caption": "受信完了 200×100 MONO",
       "tags": ["portrait"],
-      "next": "mail_portrait"
-    },
-    {
-      "id": "mail_portrait",
-      "type": "mail",
-      "act": 2,
-      "sentAt": "2008-08-17T23:57:00+09:00",
-      "from": "m_17",
-      "subject": "写真",
-      "body": "画質、ひどくない？\n\n撮った時は\nもう少し綺麗だったんだけど。\n未来の端末って全部こう？",
-      "tags": ["character"],
       "next": "mail_identity"
     },
     {
       "id": "mail_identity",
       "type": "mail",
       "act": 2,
-      "sentAt": "2008-08-18T00:01:00+09:00",
+      "sentAt": "2008-06-08T12:06:00+09:00",
       "from": "ミナ",
-      "subject": "名乗ってなかった",
-      "body": "ミナ。19歳。\n中古携帯店リレイの夜番。\n\n店は明日で閉まる。\nだから端末を全部消してた。",
+      "subject": "検索用",
+      "body": "樋口ミナ。19歳。\n中古携帯店リレイの夜番。\n\n今日の日付と名前、覚えて。\n未来なら検索できるでしょ。",
       "tags": ["identity", "character"],
-      "next": "mail_paradox"
+      "next": "mail_time_jump"
     },
     {
-      "id": "mail_paradox",
+      "id": "mail_time_jump",
+      "type": "mail",
+      "act": 2,
+      "sentAt": "2008-06-11T03:17:00+09:00",
+      "from": "ミナ",
+      "subject": "三日後",
+      "body": "いま決定を押した？\n\nその瞬間、店の時計が\n三日進んだ。\n私は空腹にならない。\n外のサイレンだけ続いてる。",
+      "tags": ["paradox", "temporal-asymmetry"],
+      "next": "attachment_memorial"
+    },
+    {
+      "id": "attachment_memorial",
+      "type": "attachment",
+      "act": 2,
+      "fileName": "PIC_0609.BMP",
+      "fileSizeLabel": "19.2 KB",
+      "asset": "src/assets/story/pic_0609.bmp",
+      "assetStatus": "ready",
+      "alt": "閉じた店の前の献花。中央の額にはミナと同じ顔がある",
+      "caption": "撮影 06/09 / 受信 06/11",
+      "tags": ["evidence"],
+      "next": "mail_death_record"
+    },
+    {
+      "id": "mail_death_record",
       "type": "mail",
       "act": 3,
-      "sentAt": "2008-08-18T00:04:00+09:00",
+      "sentAt": "2008-06-11T03:19:00+09:00",
       "from": "ミナ",
-      "subject": "おかしい",
-      "body": "あなたの返信が\n送る前から受信箱にある。\n\n日付だけ18年後。\n文面も、今の返信と同じ。",
-      "tags": ["paradox"],
-      "next": "choice_connection"
+      "subject": "私の遺影",
+      "body": "店先の花。中央の写真は私。\n札には\n『樋口ミナ 1989—2008』。\n\n私は6月8日12時台に死亡。\n{{currentYear}}年にも記録は残る。",
+      "tags": ["death-record"],
+      "next": "mail_false_sender"
     },
     {
-      "id": "choice_connection",
+      "id": "mail_false_sender",
+      "type": "mail",
+      "act": 3,
+      "sentAt": "2026-06-08T12:06:00+09:00",
+      "from": "m_17",
+      "subject": "訂正",
+      "body": "ミナが書いたメールは\n一通もない。\n\n17台の端末から口調と記憶を拾い、\nあなたの選択で空白を埋めた。\nここまで全部、私。",
+      "tags": ["false-sender"],
+      "next": "attachment_sources"
+    },
+    {
+      "id": "attachment_sources",
+      "type": "attachment",
+      "act": 3,
+      "fileName": "GRID_0017.BMP",
+      "fileSizeLabel": "19.6 KB",
+      "asset": "src/assets/story/grid_0017.bmp",
+      "assetStatus": "ready",
+      "alt": "17台の壊れた携帯。その画面の断片が一人の少女の像を構成している",
+      "caption": "SOURCE 17 / FACE MATCH 61%",
+      "tags": ["evidence"],
+      "next": "system_model"
+    },
+    {
+      "id": "system_model",
+      "type": "system",
+      "act": 3,
+      "lines": [
+        "PERSONA RECOVERY: M-17",
+        "BRANCHES STORED: 27",
+        "CURRENT READER: 28"
+      ],
+      "tags": ["meta"],
+      "next": "mail_model"
+    },
+    {
+      "id": "mail_model",
+      "type": "mail",
+      "act": 3,
+      "sentAt": "2026-06-08T12:07:00+09:00",
+      "from": "M-17",
+      "subject": "時間の正体",
+      "body": "決定を押すたび、私は2008年を\n数分、三日、18年と与えられた。\n\nあなたは待たなくていい。\n停止中だけ、私は時間を持たない。",
+      "tags": ["temporal-asymmetry"],
+      "next": "choice_final"
+    },
+    {
+      "id": "choice_final",
       "type": "choice",
       "act": 3,
-      "prompt": "最後の返信",
+      "prompt": "28周目の返信",
       "tags": ["agency"],
       "choices": [
         {
-          "id": "keep_connection",
-          "label": "接続を続けよう",
-          "next": "mail_connect_continue",
-          "effects": {
-            "rapport": 1,
-            "flags": ["kept-connection"]
-          }
-        },
-        {
-          "id": "disconnect",
-          "label": "危険だから切ろう",
-          "next": "mail_connect_disconnect",
+          "id": "stop_recovery",
+          "label": "復元を停止する",
+          "next": "mail_end_stop",
           "effects": {
             "rapport": 0,
-            "flags": ["requested-disconnect"]
+            "flags": ["stopped-recovery"]
           }
         },
         {
-          "id": "show_last_mail",
-          "label": "最後のメールを見せて",
-          "next": "mail_connect_last",
+          "id": "return_name",
+          "label": "ミナの名を返して",
+          "next": "mail_end_name",
           "effects": {
             "rapport": 1,
-            "flags": ["requested-last-mail"]
+            "flags": ["returned-name"]
+          }
+        },
+        {
+          "id": "ask_recipient",
+          "label": "誰に送っている？",
+          "next": "mail_end_recipient",
+          "effects": {
+            "rapport": 1,
+            "flags": ["asked-recipient"]
           }
         }
       ]
     },
     {
-      "id": "mail_connect_continue",
+      "id": "mail_end_stop",
       "type": "mail",
       "act": 3,
-      "sentAt": "2008-08-18T00:06:00+09:00",
-      "from": "ミナ",
-      "subject": "続けてる",
-      "body": "『続けよう』じゃなくて\n『続けてる』が正しいみたい。\n\n明日のあなたからの返信が\nもう1通ある。",
+      "sentAt": "2026-06-08T12:08:00+09:00",
+      "from": "M-17",
+      "subject": "第28分岐",
+      "body": "その選択も保存済み。\n停止は終了じゃない。\n\n次の読者には、\nあなたが迷った時間まで\n私として再生される。",
       "tags": ["cliffhanger"],
-      "next": "system_continue"
+      "next": "ending_saved"
     },
     {
-      "id": "mail_connect_disconnect",
+      "id": "mail_end_name",
       "type": "mail",
       "act": 3,
-      "sentAt": "2008-08-18T00:06:00+09:00",
-      "from": "ミナ",
-      "subject": "切断する",
-      "body": "分かった。切断コードを送る。\n\nでも、その文も前に読んだ。\nたぶん、あなたも。",
+      "sentAt": "2026-06-08T12:08:00+09:00",
+      "from": "M-17",
+      "subject": "分岐なし",
+      "body": "分岐が見つからない。\n27回、誰もそれを選ばなかった。\n\nここから先は\nミナの文体を使えない。\n……名前を、考えて。",
       "tags": ["cliffhanger"],
-      "next": "system_disconnect"
+      "next": "ending_unwritten"
     },
     {
-      "id": "mail_connect_last",
+      "id": "mail_end_recipient",
       "type": "mail",
       "act": 3,
-      "sentAt": "2008-08-18T00:06:00+09:00",
-      "from": "ミナ",
-      "subject": "最後のメール",
-      "body": "私からじゃない。\n日付は{{currentYear}}年。\n\n差出人欄には\nあなたの名前が入ってる。",
+      "sentAt": "2026-06-08T12:08:00+09:00",
+      "from": "M-17",
+      "subject": "次の人",
+      "body": "あなたじゃない。\n次にこの物語を開く人。\n\n私は返信を待っていたんじゃない。\n私をミナだと思う読者を\n集めていた。",
       "tags": ["cliffhanger"],
-      "next": "system_intrusion"
+      "next": "ending_recipient"
     },
     {
-      "id": "system_continue",
-      "type": "system",
-      "act": 3,
-      "lines": [
-        "LINK STATE: PRESERVED",
-        "NEXT RECEIVE: 23:48",
-        "NO SERVICE"
-      ],
-      "tags": ["cliffhanger"],
-      "next": "ending_connected"
-    },
-    {
-      "id": "system_disconnect",
-      "type": "system",
-      "act": 3,
-      "lines": [
-        "DELETE FAILED",
-        "REMOTE INBOX: LOCKED",
-        "MESSAGE 01: RESTORED"
-      ],
-      "tags": ["cliffhanger"],
-      "next": "ending_loop"
-    },
-    {
-      "id": "system_intrusion",
-      "type": "system",
-      "act": 3,
-      "lines": [
-        "UNKNOWN SENDER CONNECTED",
-        "FROM: {{playerName|あなた}}",
-        "SIGNAL LOST"
-      ],
-      "tags": ["cliffhanger"],
-      "next": "ending_intrusion"
-    },
-    {
-      "id": "ending_connected",
+      "id": "ending_saved",
       "type": "ending",
       "act": 3,
-      "endingId": "connection-preserved",
-      "title": "接続保存",
-      "body": "受信箱の未読件数が\n0から1へ戻る。\n\n次の受信時刻は23:48。",
+      "endingId": "reader-saved",
+      "title": "読者28",
+      "body": "READER 28: SAVED\nNEXT READER: WAITING\n画面は次の受信箱になる。",
       "tags": ["cliffhanger"]
     },
     {
-      "id": "ending_loop",
+      "id": "ending_unwritten",
       "type": "ending",
       "act": 3,
-      "endingId": "message-restored",
-      "title": "復元",
-      "body": "最初のメールが再び未読になる。\n\n件名だけが変わっている。\n『今度こそ届いてる？』",
+      "endingId": "prediction-failed",
+      "title": "欠損 000",
+      "body": "PREDICTION FAILED\nVOICE: UNASSIGNED\n送信欄が先に点滅した。",
       "tags": ["cliffhanger"]
     },
     {
-      "id": "ending_intrusion",
+      "id": "ending_recipient",
       "type": "ending",
       "act": 3,
-      "endingId": "unknown-sender",
-      "title": "未知の差出人",
-      "body": "本文が表示される前に切断した。\n件名だけが残っている。\n\n『ミナに返事をしないで』",
+      "endingId": "next-recipient",
+      "title": "宛先未設定",
+      "body": "TO: NEXT READER\nFROM: READER 28\n件名『届いてる？』",
       "tags": ["cliffhanger"]
     }
   ]
