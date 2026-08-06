@@ -48,6 +48,24 @@ function createMonochromeBmp(pixels: Uint8Array, width: number, height: number):
   return bytes
 }
 
+export function createDemoPatternBmp(): number[] {
+  const pixels = new Uint8Array(G2_IMAGE_WIDTH * G2_IMAGE_HEIGHT)
+
+  for (let y = 0; y < G2_IMAGE_HEIGHT; y += 1) {
+    for (let x = 0; x < G2_IMAGE_WIDTH; x += 1) {
+      const border = x < 3 || x >= G2_IMAGE_WIDTH - 3 || y < 3 || y >= G2_IMAGE_HEIGHT - 3
+      const checker = (Math.floor(x / 12) + Math.floor(y / 12)) % 2 === 0
+      const crosshair = Math.abs(x - G2_IMAGE_WIDTH / 2) < 2 || Math.abs(y - G2_IMAGE_HEIGHT / 2) < 2
+      const cornerMarks =
+        (x >= 12 && x < 36 && y >= 12 && y < 28) ||
+        (x >= G2_IMAGE_WIDTH - 36 && x < G2_IMAGE_WIDTH - 12 && y >= 12 && y < 28)
+      pixels[y * G2_IMAGE_WIDTH + x] = border || crosshair || cornerMarks || (checker && y > 68) ? 1 : 0
+    }
+  }
+
+  return Array.from(createMonochromeBmp(pixels, G2_IMAGE_WIDTH, G2_IMAGE_HEIGHT))
+}
+
 function loadImage(file: File): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const url = URL.createObjectURL(file)
