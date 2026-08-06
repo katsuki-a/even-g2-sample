@@ -333,12 +333,12 @@ async function verifyAttachmentRetry() {
   const caseId = `retry-${runId}`
   const feed = await startSimulator(caseId, { failAttachmentOnce: true })
   try {
-    const expected = expectedPath([0, 0, 0], 'attachment_portrait')
+    const expected = expectedPath([0, 0, 0], 'attachment_street')
     await drive(feed, [0, 0, 0], { stopAt: expected.at(-2) })
     const marker = feed.marker()
     await input('click')
     await feed.waitFor(
-      (event) => event.phase === 'render' && event.nodeId === 'attachment_portrait' &&
+      (event) => event.phase === 'render' && event.nodeId === 'attachment_street' &&
         event.status?.includes('ATTACHMENT ERROR'),
       'visible attachment error',
       marker,
@@ -357,13 +357,13 @@ async function verifyAttachmentRetry() {
     const advanceMarker = feed.marker()
     await input('click')
     await feed.waitFor(
-      (event) => event.phase === 'render' && event.nodeId === 'mail_portrait',
+      (event) => event.phase === 'render' && event.nodeId === 'mail_elapsed',
       'advance after attachment retry',
       advanceMarker,
     )
     const errors = feed.errors({ allowInjectedFailure: true })
     if (errors.length > 0) throw new Error(`Unexpected console errors: ${JSON.stringify(errors)}`)
-    return { failureScreenshot, successScreenshot, advancedTo: 'mail_portrait' }
+    return { failureScreenshot, successScreenshot, advancedTo: 'mail_elapsed' }
   } finally {
     await stopSimulator()
   }

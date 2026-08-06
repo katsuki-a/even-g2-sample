@@ -4,9 +4,9 @@
 [![Fitness](https://img.shields.io/endpoint?url=https%3A%2F%2Fkatsuki-a.github.io%2Feven-g2-sample%2Fbadges%2Ffitness.json)](./docs/fitness.md)
 [![GitHub Pages](https://github.com/katsuki-a/even-g2-sample/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/katsuki-a/even-g2-sample/actions/workflows/deploy-pages.yml)
 
-> 最先端の眼鏡に、2008年の携帯メールが届く。
+> 最先端の眼鏡に、2008年に死んだ少女のメールが届く。返信するほど、それが彼女の文章ではなくなっていく。
 
-Even Realities G2向けの短編インタラクティブノベルです。G2の緑色表示、上下・決定中心の入力、小さなモノクロ画像を、2008年から届く携帯メールという物語体験へ変換しています。
+Even Realities G2向けの短編SFミステリーです。G2の緑色表示、三択、進捗、ENDを、死者の記録から作られた人格復元実験へ変換しています。
 
 [ブラウザで第1話「届いてる？」を試す](https://katsuki-a.github.io/even-g2-sample/)
 
@@ -25,7 +25,7 @@ Even Realities G2向けの短編インタラクティブノベルです。G2の�
 | --- | --- |
 | ストーリー | 推敲済みの分岐シナリオを`content/story.json`で管理 |
 | 操作 | G2 / R1入力を上・下・決定・戻るへ正規化 |
-| 添付画像 | 200 × 100pxの1-bit BMPを直列送信し、失敗時に再試行 |
+| 添付画像 | 通り、人物、献花、回収端末の4種類の1-bit BMPを直列送信 |
 | 復元 | 選択と現在位置を保存し、WebView再生成後も再開 |
 | ブラウザ対応 | G2ブリッジがない環境では同じ物語を電話側プレビューで実行 |
 | 最小権限 | ネットワーク、マイク、位置情報、カメラ、アルバム権限を不使用 |
