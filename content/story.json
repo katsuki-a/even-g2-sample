@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "meta": {
+    "id": "no-service-episode-01",
+    "title": "圏外",
+    "englishTitle": "NO SERVICE",
+    "episodeTitle": "届いてる？",
+    "startNodeId": "mail_hook",
+    "targetSessionMinutes": {
+      "min": 8,
+      "max": 12
+    },
+    "targetPathNodes": {
+      "min": 14,
+      "max": 14
+    },
+    "contentLimits": {
+      "subjectChars": 24,
+      "bodyChars": 160,
+      "choiceLabelChars": 24,
+      "choicesPerNode": {
+        "min": 2,
+        "max": 3
+      }
+    },
+    "requiredBeatOrder": [
+      "hook",
+      "date-gap",
+      "proof",
+      "portrait",
+      "identity",
+      "paradox",
+      "cliffhanger"
+    ]
+  },
+  "templates": {
+    "currentYear": "現在の西暦年",
+    "playerName": "Even Appの表示名。空の場合は『あなた』"
+  },
+  "character": {
+    "id": "mina",
+    "name": "ミナ",
+    "initialSender": "unknown",
+    "handle": "m_17",
+    "age": 19,
+    "date": "2008-08-17",
+    "location": "中古携帯店リレイ",
+    "voice": [
+      "観察を先に書き、感情を説明しすぎない",
+      "不安になるほど短文になる",
+      "軽い皮肉は使うが相手を侮辱しない"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "mail_hook",
+      "type": "mail",
+      "act": 1,
+      "sentAt": "2008-08-17T23:48:00+09:00",
+      "from": "unknown",
+      "subject": "届いてる？",
+      "body": "これ、何回目かな。\n\n返事が来るまで\nずいぶんかかった。\n\nそっちは何年？",
+      "tags": ["hook"],
+      "next": "choice_year"
+    },
+    {
+      "id": "choice_year",
+      "type": "choice",
+      "act": 1,
+      "prompt": "返信を選択",
+      "tags": ["agency"],
+      "choices": [
+        {
+          "id": "tell_year",
+          "label": "{{currentYear}}年",
+          "next": "mail_year_current",
+          "effects": {
+            "rapport": 1,
+            "flags": ["answered-year"]
+          }
+        },
+        {
+          "id": "wrong_address",
+          "label": "間違いメールです",
+          "next": "mail_year_wrong",
+          "effects": {
+            "rapport": 0,
+            "flags": ["skeptical-first"]
+          }
+        },
+        {
+          "id": "ask_identity",
+          "label": "あなたは誰？",
+          "next": "mail_year_who",
+          "effects": {
+            "rapport": 0,
+            "flags": ["asked-identity-first"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mail_year_current",
+      "type": "mail",
+      "act": 1,
+      "sentAt": "2008-08-17T23:50:00+09:00",
+      "from": "unknown",
+      "subject": "Re: 届いてる？",
+      "body": "{{currentYear}}年って……。\n\n冗談にしては\nちょっと未来すぎる。\n\nこっちは2008年。",
+      "tags": ["date-gap", "character"],
+      "next": "mail_2008"
+    },
+    {
+      "id": "mail_year_wrong",
+      "type": "mail",
+      "act": 1,
+      "sentAt": "2008-08-17T23:50:00+09:00",
+      "from": "unknown",
+      "subject": "間違いなら",
+      "body": "どうして送信箱に\nあなたの宛先が入ってたの？\n\nこっちは2008年。\nそっちの日付を教えて。",
+      "tags": ["date-gap", "character"],
+      "next": "mail_2008"
+    },
+    {
+      "id": "mail_year_who",
+      "type": "mail",
+      "act": 1,
+      "sentAt": "2008-08-17T23:50:00+09:00",
+      "from": "unknown",
+      "subject": "同じ質問",
+      "body": "こっちも聞きたい。\n\n送信箱には最初から\nあなたの宛先が入ってた。\n日付は2008年8月17日。",
+      "tags": ["date-gap", "character"],
+      "next": "mail_2008"
+    },
+    {
+      "id": "mail_2008",
+      "type": "mail",
+      "act": 1,
+      "sentAt": "2008-08-17T23:53:00+09:00",
+      "from": "m_17",
+      "subject": "この携帯",
+      "body": "中古携帯の初期化中に\n宛先のない下書きを見つけた。\n\n送信したら、あなたに届いた。\n説明はそれだけ。",
+      "tags": ["proof"],
+      "next": "choice_proof"
+    },
+    {
+      "id": "choice_proof",
+      "type": "choice",
+      "act": 2,
+      "prompt": "返信を選択",
+      "tags": ["agency"],
+      "choices": [
+        {
+          "id": "request_photo",
+          "label": "写真を送って",
+          "next": "mail_proof_photo",
+          "effects": {
+            "rapport": 1,
+            "flags": ["requested-photo"]
+          }
+        },
+        {
+          "id": "ask_phone",
+          "label": "その携帯について",
+          "next": "mail_proof_phone",
+          "effects": {
+            "rapport": 1,
+            "flags": ["asked-phone"]
+          }
+        },
+        {
+          "id": "express_doubt",
+          "label": "まだ信じられない",
+          "next": "mail_proof_doubt",
+          "effects": {
+            "rapport": 0,
+            "flags": ["doubted-proof"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mail_proof_photo",
+      "type": "mail",
+      "act": 2,
+      "sentAt": "2008-08-17T23:55:00+09:00",
+      "from": "m_17",
+      "subject": "添付する",
+      "body": "写真なら日付の証明になる？\n\nこの端末、画像は20KBまで。\nだいぶ縮めるけど文句なしで。",
+      "tags": ["character"],
+      "next": "attachment_portrait"
+    },
+    {
+      "id": "mail_proof_phone",
+      "type": "mail",
+      "act": 2,
+      "sentAt": "2008-08-17T23:55:00+09:00",
+      "from": "m_17",
+      "subject": "型番なし",
+      "body": "型番もキャリア名も消えてる。\n残ってるのはメールと\n小さい画像の機能だけ。\n\nその画像を送ってみる。",
+      "tags": ["character"],
+      "next": "attachment_portrait"
+    },
+    {
+      "id": "mail_proof_doubt",
+      "type": "mail",
+      "act": 2,
+      "sentAt": "2008-08-17T23:55:00+09:00",
+      "from": "m_17",
+      "subject": "正常",
+      "body": "信じない方が正常。\n私も未来メールを信じてない。\n\nでも返信は来た。\n画像も試してみる。",
+      "tags": ["character"],
+      "next": "attachment_portrait"
+    },
+    {
+      "id": "attachment_portrait",
+      "type": "attachment",
+      "act": 2,
+      "fileName": "PIC_0047.BMP",
+      "fileSizeLabel": "19.8 KB",
+      "asset": "src/assets/story/pic_0047.bmp",
+      "assetStatus": "planned",
+      "alt": "粗い1-bit画像。作業ジャケット姿の少女が携帯を掲げている",
+      "caption": "受信完了 200×100 MONO",
+      "tags": ["portrait"],
+      "next": "mail_portrait"
+    },
+    {
+      "id": "mail_portrait",
+      "type": "mail",
+      "act": 2,
+      "sentAt": "2008-08-17T23:57:00+09:00",
+      "from": "m_17",
+      "subject": "写真",
+      "body": "画質、ひどくない？\n\n撮った時は\nもう少し綺麗だったんだけど。\n未来の端末って全部こう？",
+      "tags": ["character"],
+      "next": "mail_identity"
+    },
+    {
+      "id": "mail_identity",
+      "type": "mail",
+      "act": 2,
+      "sentAt": "2008-08-18T00:01:00+09:00",
+      "from": "ミナ",
+      "subject": "名乗ってなかった",
+      "body": "ミナ。19歳。\n中古携帯店リレイの夜番。\n\n店は明日で閉まる。\nだから端末を全部消してた。",
+      "tags": ["identity", "character"],
+      "next": "mail_paradox"
+    },
+    {
+      "id": "mail_paradox",
+      "type": "mail",
+      "act": 3,
+      "sentAt": "2008-08-18T00:04:00+09:00",
+      "from": "ミナ",
+      "subject": "おかしい",
+      "body": "あなたの返信が\n送る前から受信箱にある。\n\n日付だけ18年後。\n文面も、今の返信と同じ。",
+      "tags": ["paradox"],
+      "next": "choice_connection"
+    },
+    {
+      "id": "choice_connection",
+      "type": "choice",
+      "act": 3,
+      "prompt": "最後の返信",
+      "tags": ["agency"],
+      "choices": [
+        {
+          "id": "keep_connection",
+          "label": "接続を続けよう",
+          "next": "mail_connect_continue",
+          "effects": {
+            "rapport": 1,
+            "flags": ["kept-connection"]
+          }
+        },
+        {
+          "id": "disconnect",
+          "label": "危険だから切ろう",
+          "next": "mail_connect_disconnect",
+          "effects": {
+            "rapport": 0,
+            "flags": ["requested-disconnect"]
+          }
+        },
+        {
+          "id": "show_last_mail",
+          "label": "最後のメールを見せて",
+          "next": "mail_connect_last",
+          "effects": {
+            "rapport": 1,
+            "flags": ["requested-last-mail"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mail_connect_continue",
+      "type": "mail",
+      "act": 3,
+      "sentAt": "2008-08-18T00:06:00+09:00",
+      "from": "ミナ",
+      "subject": "続けてる",
+      "body": "『続けよう』じゃなくて\n『続けてる』が正しいみたい。\n\n明日のあなたからの返信が\nもう1通ある。",
+      "tags": ["cliffhanger"],
+      "next": "system_continue"
+    },
+    {
+      "id": "mail_connect_disconnect",
+      "type": "mail",
+      "act": 3,
+      "sentAt": "2008-08-18T00:06:00+09:00",
+      "from": "ミナ",
+      "subject": "切断する",
+      "body": "分かった。切断コードを送る。\n\nでも、その文も前に読んだ。\nたぶん、あなたも。",
+      "tags": ["cliffhanger"],
+      "next": "system_disconnect"
+    },
+    {
+      "id": "mail_connect_last",
+      "type": "mail",
+      "act": 3,
+      "sentAt": "2008-08-18T00:06:00+09:00",
+      "from": "ミナ",
+      "subject": "最後のメール",
+      "body": "私からじゃない。\n日付は{{currentYear}}年。\n\n差出人欄には\nあなたの名前が入ってる。",
+      "tags": ["cliffhanger"],
+      "next": "system_intrusion"
+    },
+    {
+      "id": "system_continue",
+      "type": "system",
+      "act": 3,
+      "lines": [
+        "LINK STATE: PRESERVED",
+        "NEXT RECEIVE: 23:48",
+        "NO SERVICE"
+      ],
+      "tags": ["cliffhanger"],
+      "next": "ending_connected"
+    },
+    {
+      "id": "system_disconnect",
+      "type": "system",
+      "act": 3,
+      "lines": [
+        "DELETE FAILED",
+        "REMOTE INBOX: LOCKED",
+        "MESSAGE 01: RESTORED"
+      ],
+      "tags": ["cliffhanger"],
+      "next": "ending_loop"
+    },
+    {
+      "id": "system_intrusion",
+      "type": "system",
+      "act": 3,
+      "lines": [
+        "UNKNOWN SENDER CONNECTED",
+        "FROM: {{playerName|あなた}}",
+        "SIGNAL LOST"
+      ],
+      "tags": ["cliffhanger"],
+      "next": "ending_intrusion"
+    },
+    {
+      "id": "ending_connected",
+      "type": "ending",
+      "act": 3,
+      "endingId": "connection-preserved",
+      "title": "接続保存",
+      "body": "受信箱の未読件数が\n0から1へ戻る。\n\n次の受信時刻は23:48。",
+      "tags": ["cliffhanger"]
+    },
+    {
+      "id": "ending_loop",
+      "type": "ending",
+      "act": 3,
+      "endingId": "message-restored",
+      "title": "復元",
+      "body": "最初のメールが再び未読になる。\n\n件名だけが変わっている。\n『今度こそ届いてる？』",
+      "tags": ["cliffhanger"]
+    },
+    {
+      "id": "ending_intrusion",
+      "type": "ending",
+      "act": 3,
+      "endingId": "unknown-sender",
+      "title": "未知の差出人",
+      "body": "本文が表示される前に切断した。\n件名だけが残っている。\n\n『ミナに返事をしないで』",
+      "tags": ["cliffhanger"]
+    }
+  ]
+}
