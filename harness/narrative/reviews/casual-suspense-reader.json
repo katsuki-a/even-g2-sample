@@ -1,0 +1,717 @@
+{
+  "schemaVersion": 2,
+  "personaId": "casual-suspense-reader",
+  "inputDigest": "sha256:c75dbeb4fa8ada7e37aa494250e50adb549ef0e5759b4171d8ec60450f26247a",
+  "reviewer": {
+    "kind": "codex-sub-agent",
+    "taskName": "review_casual_v6",
+    "independent": true
+  },
+  "routes": [
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=avoid_back_door--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_year_mina",
+        "mail_time_jump_name_stairs",
+        "ending_name_stairs_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の名を呼ぶ異常から、存在しない階段が二人目を作った回収まで疑問が途切れず続く。",
+      "originalityReason": "棚卸し語彙、十一分差の同一人物、透明レンズで足した階段を一つの誤記録機構へ結んでいる。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=avoid_back_door--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 5,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_safety_back",
+        "mail_end_name_stairs_keep_unknown",
+        "ending_name_stairs_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "救助の階段を選んだ後で空白を守ると救えた結末まで消えるため、最終判断の代償が鋭く残る。",
+      "originalityReason": "空白の保存を単なる未解決でなく、読者が作った生存像を撤回する倫理的操作に変えている。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=avoid_back_door--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "attachment_portrait",
+        "mail_end_name_stairs_lend_view",
+        "ending_name_stairs_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "会話相手の顔が後から見た遺影由来だった反転が肖像添付を更新し、地下棚17への次の行動も明確。",
+      "originalityReason": "死者の顔を復元して終えず、本人の規則だけを証言として残す出典分離が既知の死者通信を越える。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=call_emergency--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_time_jump_name_exit",
+        "mail_end_name_exit_draft_only",
+        "ending_name_exit_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "二枚の名札の謎を、店長の文へミナが三文字を刻んだ対立として短く具体的に回収する。",
+      "originalityReason": "非常口表示と筆圧・傷の照合を使い、人格複製らしい見かけを一枚の在庫ラベル改ざんへ反転した。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=call_emergency--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_record_name_exit",
+        "mail_end_name_exit_keep_unknown",
+        "ending_name_exit_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "二人目や装置人格を期待させてから、同名の日付を事故後の入庫行へ戻す説明が鮮明で納得しやすい。",
+      "originalityReason": "M-17を人工人格でなく被害者名を流用した改ざん行の識別子にする反転が、固有の事務倫理を持つ。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=call_emergency--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "attachment_memorial_exit",
+        "mail_end_name_exit_lend_view",
+        "ending_name_exit_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "非常口盤の表裏を分ける視覚的な回収は理解しやすく、自分を分類名にしない制止へ着地する。",
+      "originalityReason": "透過表示で逆書きの本人文を表面の名から分離し、人を在庫化する分類そのものを脅威にしている。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=discard_phone--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_safety_discard",
+        "mail_end_name_dark_draft_only",
+        "ending_name_dark_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "目を閉じることまで入力になる怖さから、『私』が遺体でなく検品印を持つ端末だという回収がよく効く。",
+      "originalityReason": "一人称を人物指示でなく筆圧照合できる検品印へ読み替え、死者の居場所を改ざん原本の所在へ変えた。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=discard_phone--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_time_jump_name_dark",
+        "mail_end_name_dark_keep_unknown",
+        "ending_name_dark_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "裏向きの名という怪異を、一台だけ液晶ごと裏返して守った手順へ戻すため、終盤の理解がすっきりする。",
+      "originalityReason": "名前より顔を先に登録しないという口癖が、自分を17番にされない物理的な保管手順として再機能する。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=discard_phone--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_record_name_dark",
+        "mail_end_name_dark_lend_view",
+        "ending_name_dark_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "善意で足した名を分離すると店長印の下へ続く削除線が出るため、読者の関与と犯行が一本で繋がる。",
+      "originalityReason": "閉眼の負像と透過レンズを筆跡分離に用い、復元した人物ではなく消名の一筆を証拠に据えている。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=avoid_back_door--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_year_current",
+        "mail_end_year_stairs_draft_only",
+        "ending_year_stairs_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "2026年を見抜く異常が早く、17文字を一字一段へ並べて最後の字だけ地下に置く終端は続きを強く促す。",
+      "originalityReason": "文字数と段数の一致はやや作為的だが、存在しない階段を文の物理配置として使うG2向けの変奏がある。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=avoid_back_door--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_time_jump_year_stairs",
+        "mail_end_year_stairs_keep_unknown",
+        "ending_year_stairs_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "救助場所に見えた17段が事故後の更新時刻へ反転し、16台の消去順と未確認の一台が次の調査を引く。",
+      "originalityReason": "階段を場所やループでなく改ざん履歴の可視化へ変え、空白を守る行為を証拠保全として成立させた。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=avoid_back_door--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "attachment_memorial_stairs",
+        "mail_end_year_stairs_lend_view",
+        "ending_year_stairs_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "借りた視界が階段そのものでなく時刻の並べ方だったと分かり、17番だけ未確認という手掛かりを残す。",
+      "originalityReason": "視界提供を画像内容の生成に限定せず、欠損資料を配列する比較規則として扱う点が装置固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=call_emergency--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_time_jump_year_exit",
+        "mail_end_year_exit_draft_only",
+        "ending_year_exit_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "逆向き非常口と剥がれた17番を追わせ、最後に誘導灯の点滅が本人文になるため短編として強い余韻が出る。",
+      "originalityReason": "18年後の表示規格を宛先にした可能性は魅力的だが、点滅暗号自体には馴染みのある仕掛けも残る。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=call_emergency--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 5,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_year_current",
+        "mail_end_year_exit_keep_unknown",
+        "ending_year_exit_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "G2の電池が減るたび2008年の誘導灯も消える時間制限が生じ、画像保存か空白保全かで本気で迷える。",
+      "originalityReason": "電池残量を過去の事故記録の時計へ直結した装置統合は強いが、消滅カウントダウンの型は比較的馴染み深い。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=call_emergency--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_safety_call",
+        "mail_end_year_exit_lend_view",
+        "ending_year_exit_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "未来の非常口人型が消えても地下を指す腕だけ残る選別は明快だが、終端の問いは他経路よりやや小さい。",
+      "originalityReason": "表示由来の輪郭と17台すべての原画にある一画を分離し、救助記号を物証の目印へ絞り込んでいる。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=discard_phone--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_time_jump_year_dark",
+        "mail_end_year_dark_draft_only",
+        "ending_year_dark_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "暗闇でも戻る時刻の謎が、事故後に初期化された16台と免れた12時04分の原本へ具体的に収束する。",
+      "originalityReason": "死者のメッセージを時刻改ざんの鑑識へ転換し、0と未確認ダッシュの違いを人物の信条と証拠に結んだ。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=discard_phone--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 5,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_record_year_dark",
+        "mail_end_year_dark_keep_unknown",
+        "ending_year_dark_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "原因を決めない選択そのものが最後の未確認時刻を守り、店長の初期化順を暴くという代償と成果が見える。",
+      "originalityReason": "空白を消極的な保留でなくタイムスタンプの上書きを防ぐ能動的な証拠保全へ変えた構造が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=discard_phone--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_year_current",
+        "mail_end_year_dark_lend_view",
+        "ending_year_dark_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "現在時刻が怪異の文章でなく17台を並べる定規だった回収は知的で、16履歴の消去も明瞭に伝わる。",
+      "originalityReason": "読者の視界を内容として混ぜず校正基準へ限定し、未来通信を資料比較の道具にする反転が新鮮である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=avoid_back_door--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_year_wrong",
+        "mail_end_reject_stairs_draft_only",
+        "ending_reject_stairs_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "閉じても視界へ戻る異常が早く、読者とミナの二つの受信拒否が復元拒否の可能性を残して続きを誘う。",
+      "originalityReason": "拒否を無視されるホラーだけで終えず、返品不能と復元同意を在庫業務の語彙で同じ問題へ接続した。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=avoid_back_door--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 5,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_time_jump_reject_stairs",
+        "mail_end_reject_stairs_keep_unknown",
+        "ending_reject_stairs_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "受信拒否後に階段を選んだ矛盾が、階段を消しても残る足跡と行為者不明の救助結果として痛く残る。",
+      "originalityReason": "同意なしの介入を成功か失敗で処理せず、結果だけ実在する時の記録主体という倫理へ具体化している。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=avoid_back_door--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 5,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_year_wrong",
+        "mail_end_reject_stairs_lend_view",
+        "ending_reject_stairs_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "拒否後に貸した視界を出典化しても許可はNOのままという矛盾が強く、返却先の空白が次の謎になる。",
+      "originalityReason": "データの出どころと使用同意を別問題として扱い、視界を返却不能な在庫にする終わり方は置換しにくい。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=call_emergency--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_time_jump_reject_exit",
+        "mail_end_reject_exit_draft_only",
+        "ending_reject_exit_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "避難名簿の削除と地下棚の入庫が同じ一筆だった回収は具体的で、店長の改ざんを短時間で理解できる。",
+      "originalityReason": "17番の暗号解読へ逃げず、人名を避難者から商品へ移す二枚の事務記録を犯行機構にしている。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=call_emergency--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_record_reject_exit",
+        "mail_end_reject_exit_keep_unknown",
+        "ending_reject_exit_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "救助を装う白い人型を捨てると、名簿から棚へ移された同じ名だけが残るため、主要反転が明快に効く。",
+      "originalityReason": "未来の救助像より改ざんされた二行を重視し、死者通信を人を物へ分類し直した記録犯罪へ変えている。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=call_emergency--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 5,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_safety_call",
+        "mail_end_reject_exit_lend_view",
+        "ending_reject_exit_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "救助したつもりの白い人型が全て未来の絵だったと分かり、物証と避難同意を混同できない緊張が残る。",
+      "originalityReason": "非常口アイコンを救世主にせず、読者が描いた救助物語を除去して一画と本人報告だけを証拠へ戻した。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=discard_phone--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 5,
+        "revealPayoff": 5,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_record_reject_dark",
+        "mail_end_reject_dark_draft_only",
+        "ending_reject_dark_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "拒否、閉眼、本人限定を重ねた唯一の経路で真正な17文字が残り、棚を開ける危険な選択へ強く引く。",
+      "originalityReason": "読者画素ゼロを単なる無操作でなく出典純度の条件にし、真実の取得と故人の秘匿意思を衝突させた。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=discard_phone--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 5,
+        "revealPayoff": 5,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_time_jump_reject_dark",
+        "mail_end_reject_dark_keep_unknown",
+        "ending_reject_dark_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "削られる傷の音を追わせて、最後に傷ではなく17本の未確認線だったと返すため驚きと余韻が両立する。",
+      "originalityReason": "原因不明の横線を欠落でなく全台へ能動的に残した防御として扱い、謎解きそのものへの抵抗を描いた。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=discard_phone--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 5,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_record_reject_dark",
+        "mail_end_reject_dark_lend_view",
+        "ending_reject_dark_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "左上傷が破損でなく返却済みの記号へ反転し、地下の物を持ち出させない在庫指示として端的に決着する。",
+      "originalityReason": "居場所の告白らしい17文字を返却履歴と持出禁止へ読み替え、物語の怖さを復活でなく証拠管理に置く。"
+    }
+  ],
+  "forcedTests": {
+    "choice-erasure": {
+      "genericityDetected": false,
+      "reason": "年への応答と安全選択が、階段・非常口・閉眼および名・時刻・拒否の別資料へ残り、各終端の証拠と倫理を変える。"
+    },
+    "character-swap": {
+      "genericityDetected": false,
+      "reason": "ミナの棚卸し規則、0とダッシュの区別、左上傷への執着は職務と被害構造に結びつき、人物名だけの交換では保てない。"
+    },
+    "device-swap": {
+      "genericityDetected": false,
+      "reason": "透明レンズ上の位置合わせ、奥行き別の焦点、閉眼入力、200×100の白黒視界が因果資料を生成するため、スマホ通知では同じ体験にならない。"
+    },
+    "early-prediction": {
+      "genericityDetected": false,
+      "reason": "序盤から年代差と死者通信は疑えるが、M-17の因果合成、読者画素の混入、橘店長の記録改ざんまでは高い確信で予測できない。"
+    },
+    "trope-stack": {
+      "genericityDetected": false,
+      "reason": "死者通信、AIらしい送信者、読者メタはあるが、いずれも17台の欠損資料と出典照合、人を在庫化する改ざんへ具体的に変形されている。"
+    },
+    "ending-paraphrase": {
+      "genericityDetected": false,
+      "reason": "終端は同一人物の時間差、名簿から棚への転記、未確認線、視界の同意など個別の物証と代償を持ち、定型三文だけには還元できない。"
+    }
+  },
+  "overallNotes": {
+    "strength": "レンズにしか成立しない導入が即効性を持ち、17台の欠損画像、棚卸し規則、読者の三択を事故記録の出典汚染へ一貫して結ぶ。とくに空白を守る選択や拒否後の視界提供が、真相取得と本人同意を衝突させる終端は強い。",
+    "risk": "後半はM-17、出典分離、筆圧、入庫票、原因欄が短時間に集中し、通勤中の初見では仕組みを一度で掴めない経路がある。複数の終端で16台の初期化や名の移動へ似た回収が続くため、再読時には経路差が数値や書類上の差へ縮んで見える可能性もある。"
+  }
+}

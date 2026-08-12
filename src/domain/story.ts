@@ -15,10 +15,20 @@ export type ChoiceEffect = {
   flags: string[]
 }
 
+export type ConditionalNextCase = {
+  requires: string[]
+  next: string
+}
+
+export type NextTarget = string | {
+  cases: ConditionalNextCase[]
+  fallback?: string
+}
+
 export type StoryChoice = {
   id: string
   label: string
-  next: string
+  next: NextTarget
   effects: ChoiceEffect
 }
 
@@ -34,7 +44,7 @@ export type MailNode = BaseNode & {
   from: string
   subject: string
   body: string
-  next: string
+  next: NextTarget
 }
 
 export type ChoiceNode = BaseNode & {
@@ -51,13 +61,13 @@ export type AttachmentNode = BaseNode & {
   assetStatus: 'planned' | 'ready'
   alt: string
   caption: string
-  next: string
+  next: NextTarget
 }
 
 export type SystemNode = BaseNode & {
   type: 'system'
   lines: string[]
-  next: string
+  next: NextTarget
 }
 
 export type EndingNode = BaseNode & {
@@ -83,7 +93,24 @@ export function nodeAt(story: Story, nodeId: string): StoryNode {
 }
 
 export function nextNodeIds(node: StoryNode): string[] {
-  if (node.type === 'choice') return node.choices.map((choice) => choice.next)
+  if (node.type === 'choice') return node.choices.flatMap((choice) => nextTargetNodeIds(choice.next))
   if (node.type === 'ending') return []
-  return [node.next]
+  return nextTargetNodeIds(node.next)
+}
+
+export function nextTargetNodeIds(target: NextTarget): string[] {
+  if (typeof target === 'string') return [target]
+  return [
+    ...target.cases.map((item) => item.next),
+    ...(target.fallback ? [target.fallback] : []),
+  ]
+}
+
+export function resolveNextTarget(target: NextTarget, flags: readonly string[]): string {
+  if (typeof target === 'string') return target
+  const flagSet = new Set(flags)
+  const matched = target.cases.find((item) => item.requires.every((flag) => flagSet.has(flag)))
+  if (matched) return matched.next
+  if (target.fallback) return target.fallback
+  throw new Error(`No conditional transition matches flags: ${flags.join(', ')}`)
 }

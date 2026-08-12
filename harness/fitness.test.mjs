@@ -14,6 +14,9 @@ test('正本ストーリーはconceptゲートを通る', () => {
   assert.equal(report.hardGates.length, 0)
   assert.ok(report.score >= 90)
   assert.ok(report.components.story.stats.paths >= 3)
+  assert.equal(report.components.narrative.stats.personas, 5)
+  assert.equal(report.components.narrative.stats.reviewedRoutes, 27)
+  assert.ok(report.components.narrative.score > 0)
 })
 
 test('存在しない遷移先を拒否する', () => {
@@ -50,4 +53,12 @@ test('必須ビートの順序違反を拒否する', () => {
   story.nodes.find((node) => node.id === 'attachment_portrait').tags = []
   const result = evaluateStory(story, { rootDir: ROOT_DIR })
   assert.ok(result.hardGates.some((issue) => issue.code === 'STORY_BEAT_ORDER'))
+})
+
+test('同じ選択ノード内の重複choice IDを拒否する', () => {
+  const story = structuredClone(canonicalStory)
+  const choice = story.nodes.find((node) => node.type === 'choice')
+  choice.choices[1].id = choice.choices[0].id
+  const result = evaluateStory(story, { rootDir: ROOT_DIR })
+  assert.ok(result.hardGates.some((issue) => issue.code === 'STORY_CHOICE_ID'))
 })

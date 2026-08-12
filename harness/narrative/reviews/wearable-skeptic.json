@@ -1,0 +1,798 @@
+{
+  "schemaVersion": 2,
+  "personaId": "wearable-skeptic",
+  "inputDigest": "sha256:bc9355b88f958bace18807c90863c7901d7f20ff33d377f9de656d8756ffd17d",
+  "reviewer": {
+    "kind": "codex-sub-agent",
+    "taskName": "review_wearable_v6",
+    "independent": true
+  },
+  "routes": [
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=avoid_back_door--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_mina",
+        "mail_safety_back",
+        "mail_model",
+        "mail_end_name_stairs_draft_only",
+        "ending_name_stairs_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の相手をミナと呼ぶ選択が、人物を先に登録してしまう危うさを生み、図面にない階段を視界から送る判断が救助と捏造の両義性を作る。読者が足した階段が十一分差の同一人物を二人の生存者に見せたと反転するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。未登録の名を先回りして与える行為が後の持ち主欄や分類改ざんへ直結し、透明表示の白い階段と17枚の欠損像を物証の配列へ結びつける。読者が足した階段が十一分差の同一人物を二人の生存者に見せたと反転する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=avoid_back_door--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_mina",
+        "mail_safety_back",
+        "mail_model",
+        "mail_end_name_stairs_keep_unknown",
+        "ending_name_stairs_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の相手をミナと呼ぶ選択が、人物を先に登録してしまう危うさを生み、図面にない階段を視界から送る判断が救助と捏造の両義性を作る。名と階段を空白へ戻すと救助結果まで消えるという記録倫理を残すため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。未登録の名を先回りして与える行為が後の持ち主欄や分類改ざんへ直結し、透明表示の白い階段と17枚の欠損像を物証の配列へ結びつける。名と階段を空白へ戻すと救助結果まで消えるという記録倫理を残す点が固有である。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=avoid_back_door--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_mina",
+        "mail_safety_back",
+        "mail_model",
+        "mail_end_name_stairs_lend_view",
+        "ending_name_stairs_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の相手をミナと呼ぶ選択が、人物を先に登録してしまう危うさを生み、図面にない階段を視界から送る判断が救助と捏造の両義性を作る。会話相手の顔が事故後の遺影由来だと分離し、規則だけを証言として地下棚へ進むため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。未登録の名を先回りして与える行為が後の持ち主欄や分類改ざんへ直結し、透明表示の白い階段と17枚の欠損像を物証の配列へ結びつける。会話相手の顔が事故後の遺影由来だと分離し、規則だけを証言として地下棚へ進む点が固有である。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=call_emergency--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 3
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_mina",
+        "mail_safety_call",
+        "mail_model",
+        "mail_end_name_exit_draft_only",
+        "ending_name_exit_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の相手をミナと呼ぶ選択が、人物を先に登録してしまう危うさを生み、未来の非常口を送る判断が救助と逆向きの誤誘導を同時に孕む。店長の「ミナを17番に」へ本人が末尾三字の「しない」を刻んだと判明するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。未登録の名を先回りして与える行為が後の持ち主欄や分類改ざんへ直結し、1-bitの非常口人型、逆向きの腕、透過した裏面文字を証拠へ変える。店長の「ミナを17番に」へ本人が末尾三字の「しない」を刻んだと判明する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=call_emergency--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_mina",
+        "mail_safety_call",
+        "mail_model",
+        "mail_end_name_exit_keep_unknown",
+        "ending_name_exit_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の相手をミナと呼ぶ選択が、人物を先に登録してしまう危うさを生み、未来の非常口を送る判断が救助と逆向きの誤誘導を同時に孕む。M-17が人格でなく事故当日に追加された改ざん入庫行の識別子へ反転するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。未登録の名を先回りして与える行為が後の持ち主欄や分類改ざんへ直結し、1-bitの非常口人型、逆向きの腕、透過した裏面文字を証拠へ変える。M-17が人格でなく事故当日に追加された改ざん入庫行の識別子へ反転する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=call_emergency--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_mina",
+        "mail_safety_call",
+        "mail_model",
+        "mail_end_name_exit_lend_view",
+        "ending_name_exit_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の相手をミナと呼ぶ選択が、人物を先に登録してしまう危うさを生み、未来の非常口を送る判断が救助と逆向きの誤誘導を同時に孕む。非常口盤の裏に本人が逆書きした分類拒否の文を透過像から分離するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。未登録の名を先回りして与える行為が後の持ち主欄や分類改ざんへ直結し、1-bitの非常口人型、逆向きの腕、透過した裏面文字を証拠へ変える。非常口盤の裏に本人が逆書きした分類拒否の文を透過像から分離する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=discard_phone--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_mina",
+        "mail_safety_discard",
+        "mail_model",
+        "mail_end_name_dark_draft_only",
+        "ending_name_dark_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の相手をミナと呼ぶ選択が、人物を先に登録してしまう危うさを生み、閉眼して何も見せない消極策まで二万画素の0として記録される。「地下棚に私がいる」の私を遺体でなくミナの検品印付き端末17へ反転するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。未登録の名を先回りして与える行為が後の持ち主欄や分類改ざんへ直結し、閉眼の黒を二万画素の0として扱い、空白・傷・時刻との照合に使う。「地下棚に私がいる」の私を遺体でなくミナの検品印付き端末17へ反転する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=discard_phone--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_mina",
+        "mail_safety_discard",
+        "mail_model",
+        "mail_end_name_dark_keep_unknown",
+        "ending_name_dark_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の相手をミナと呼ぶ選択が、人物を先に登録してしまう危うさを生み、閉眼して何も見せない消極策まで二万画素の0として記録される。裏向きの名が人格ではなく液晶を反転保管して先行登録を防ぐ手順だと明かすため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。未登録の名を先回りして与える行為が後の持ち主欄や分類改ざんへ直結し、閉眼の黒を二万画素の0として扱い、空白・傷・時刻との照合に使う。裏向きの名が人格ではなく液晶を反転保管して先行登録を防ぐ手順だと明かす点が固有である。"
+    },
+    {
+      "routeId": "choice_year=ask_mina--choice_safety=discard_phone--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_mina",
+        "mail_safety_discard",
+        "mail_model",
+        "mail_end_name_dark_lend_view",
+        "ending_name_dark_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "名乗る前の相手をミナと呼ぶ選択が、人物を先に登録してしまう危うさを生み、閉眼して何も見せない消極策まで二万画素の0として記録される。読者が足した名を外すと橘店長印の下へ続く削除線が証拠として現れるため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。未登録の名を先回りして与える行為が後の持ち主欄や分類改ざんへ直結し、閉眼の黒を二万画素の0として扱い、空白・傷・時刻との照合に使う。読者が足した名を外すと橘店長印の下へ続く削除線が証拠として現れる点が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=avoid_back_door--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_current",
+        "mail_safety_back",
+        "mail_model",
+        "mail_end_year_stairs_draft_only",
+        "ending_year_stairs_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "右上の2026年を答えると相手にG2の時刻や電池まで見抜かれる異常が進み、図面にない階段を視界から送る判断が救助と捏造の両義性を作る。本人の17文字を一字一段へ変換し、最後の一字だけが地下にある配置へ着地するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。G2右上の年・現在時刻・電池残量を過去の17台の照合基準へ組み込み、透明表示の白い階段と17枚の欠損像を物証の配列へ結びつける。本人の17文字を一字一段へ変換し、最後の一字だけが地下にある配置へ着地する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=avoid_back_door--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_current",
+        "mail_safety_back",
+        "mail_model",
+        "mail_end_year_stairs_keep_unknown",
+        "ending_year_stairs_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "右上の2026年を答えると相手にG2の時刻や電池まで見抜かれる異常が進み、図面にない階段を視界から送る判断が救助と捏造の両義性を作る。救助階段を事故後の16台の初期化時刻という改ざん順へ読み替えるため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。G2右上の年・現在時刻・電池残量を過去の17台の照合基準へ組み込み、透明表示の白い階段と17枚の欠損像を物証の配列へ結びつける。救助階段を事故後の16台の初期化時刻という改ざん順へ読み替える点が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=avoid_back_door--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_current",
+        "mail_safety_back",
+        "mail_model",
+        "mail_end_year_stairs_lend_view",
+        "ending_year_stairs_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "右上の2026年を答えると相手にG2の時刻や電池まで見抜かれる異常が進み、図面にない階段を視界から送る判断が救助と捏造の両義性を作る。視界は階段そのものではなく16台の更新時刻を並べる順序だけを与えたと分かるため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。G2右上の年・現在時刻・電池残量を過去の17台の照合基準へ組み込み、透明表示の白い階段と17枚の欠損像を物証の配列へ結びつける。視界は階段そのものではなく16台の更新時刻を並べる順序だけを与えたと分かる点が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=call_emergency--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_current",
+        "mail_safety_call",
+        "mail_model",
+        "mail_end_year_exit_draft_only",
+        "ending_year_exit_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "右上の2026年を答えると相手にG2の時刻や電池まで見抜かれる異常が進み、未来の非常口を送る判断が救助と逆向きの誤誘導を同時に孕む。非常口盤の17回点滅を18年後の表示規格で本人の17文字へ戻すため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。G2右上の年・現在時刻・電池残量を過去の17台の照合基準へ組み込み、1-bitの非常口人型、逆向きの腕、透過した裏面文字を証拠へ変える。非常口盤の17回点滅を18年後の表示規格で本人の17文字へ戻す点が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=call_emergency--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_current",
+        "mail_safety_call",
+        "mail_model",
+        "mail_end_year_exit_keep_unknown",
+        "ending_year_exit_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "右上の2026年を答えると相手にG2の時刻や電池まで見抜かれる異常が進み、未来の非常口を送る判断が救助と逆向きの誤誘導を同時に孕む。原因を空白へ戻してもG2電池残量と同期する誘導灯が減り続ける期限を作るため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。G2右上の年・現在時刻・電池残量を過去の17台の照合基準へ組み込み、1-bitの非常口人型、逆向きの腕、透過した裏面文字を証拠へ変える。原因を空白へ戻してもG2電池残量と同期する誘導灯が減り続ける期限を作る点が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=call_emergency--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_current",
+        "mail_safety_call",
+        "mail_model",
+        "mail_end_year_exit_lend_view",
+        "ending_year_exit_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "右上の2026年を答えると相手にG2の時刻や電池まで見抜かれる異常が進み、未来の非常口を送る判断が救助と逆向きの誤誘導を同時に孕む。未来の非常口像を外しても17台すべてに地下を指す腕の一画だけが残るため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。G2右上の年・現在時刻・電池残量を過去の17台の照合基準へ組み込み、1-bitの非常口人型、逆向きの腕、透過した裏面文字を証拠へ変える。未来の非常口像を外しても17台すべてに地下を指す腕の一画だけが残る点が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=discard_phone--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_current",
+        "mail_safety_discard",
+        "mail_model",
+        "mail_end_year_dark_draft_only",
+        "ending_year_dark_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "右上の2026年を答えると相手にG2の時刻や電池まで見抜かれる異常が進み、閉眼して何も見せない消極策まで二万画素の0として記録される。12時04分で止まる端末17が事故後の16台一斉初期化と改ざん順を証明するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。G2右上の年・現在時刻・電池残量を過去の17台の照合基準へ組み込み、閉眼の黒を二万画素の0として扱い、空白・傷・時刻との照合に使う。12時04分で止まる端末17が事故後の16台一斉初期化と改ざん順を証明する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=discard_phone--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_current",
+        "mail_safety_discard",
+        "mail_model",
+        "mail_end_year_dark_keep_unknown",
+        "ending_year_dark_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "右上の2026年を答えると相手にG2の時刻や電池まで見抜かれる異常が進み、閉眼して何も見せない消極策まで二万画素の0として記録される。原因を決めず空白を守る行為が未上書きの12時04分と初期化順を保存するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。G2右上の年・現在時刻・電池残量を過去の17台の照合基準へ組み込み、閉眼の黒を二万画素の0として扱い、空白・傷・時刻との照合に使う。原因を決めず空白を守る行為が未上書きの12時04分と初期化順を保存する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=tell_year--choice_safety=discard_phone--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 3
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_current",
+        "mail_safety_discard",
+        "mail_model",
+        "mail_end_year_dark_lend_view",
+        "ending_year_dark_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "右上の2026年を答えると相手にG2の時刻や電池まで見抜かれる異常が進み、閉眼して何も見せない消極策まで二万画素の0として記録される。G2の現在時刻を物語内容でなく17台を並べる比較定規へ用途転換するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。G2右上の年・現在時刻・電池残量を過去の17台の照合基準へ組み込み、閉眼の黒を二万画素の0として扱い、空白・傷・時刻との照合に使う。G2の現在時刻を物語内容でなく17台を並べる比較定規へ用途転換する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=avoid_back_door--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 4
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_wrong",
+        "mail_safety_back",
+        "mail_model",
+        "mail_end_reject_stairs_draft_only",
+        "ending_reject_stairs_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "表示を閉じても瞬きで同位置へ戻る拒否不能の導入が不安を保ち、図面にない階段を視界から送る判断が救助と捏造の両義性を作る。読者とミナの受信拒否が同じ欄にあり、本人文を復元拒否の指定へ読み替えるため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。受信拒否を単なる離脱でなく同意欄・返品・証言利用の条件へ変換し、透明表示の白い階段と17枚の欠損像を物証の配列へ結びつける。読者とミナの受信拒否が同じ欄にあり、本人文を復元拒否の指定へ読み替える点が固有である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=avoid_back_door--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 4,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 4,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_wrong",
+        "mail_safety_back",
+        "mail_model",
+        "mail_end_reject_stairs_keep_unknown",
+        "ending_reject_stairs_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "表示を閉じても瞬きで同位置へ戻る拒否不能の導入が不安を保ち、図面にない階段を視界から送る判断が救助と捏造の両義性を作る。拒否された証言に救助後の足跡だけ残り、その行為主体を問うため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。受信拒否を単なる離脱でなく同意欄・返品・証言利用の条件へ変換し、透明表示の白い階段と17枚の欠損像を物証の配列へ結びつける。拒否された証言に救助後の足跡だけ残り、その行為主体を問う点が固有である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=avoid_back_door--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_wrong",
+        "mail_safety_back",
+        "mail_model",
+        "mail_end_reject_stairs_lend_view",
+        "ending_reject_stairs_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "表示を閉じても瞬きで同位置へ戻る拒否不能の導入が不安を保ち、図面にない階段を視界から送る判断が救助と捏造の両義性を作る。拒否後に貸した視界は出典を追えても使用許可がなく、返却先も空白だと突きつけるため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。受信拒否を単なる離脱でなく同意欄・返品・証言利用の条件へ変換し、透明表示の白い階段と17枚の欠損像を物証の配列へ結びつける。拒否後に貸した視界は出典を追えても使用許可がなく、返却先も空白だと突きつける点が固有である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=call_emergency--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_wrong",
+        "mail_safety_call",
+        "mail_model",
+        "mail_end_reject_exit_draft_only",
+        "ending_reject_exit_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "表示を閉じても瞬きで同位置へ戻る拒否不能の導入が不安を保ち、未来の非常口を送る判断が救助と逆向きの誤誘導を同時に孕む。削除された避難名簿17行目と追加された地下棚17の入庫票を同一筆圧で結ぶため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。受信拒否を単なる離脱でなく同意欄・返品・証言利用の条件へ変換し、1-bitの非常口人型、逆向きの腕、透過した裏面文字を証拠へ変える。削除された避難名簿17行目と追加された地下棚17の入庫票を同一筆圧で結ぶ点が固有である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=call_emergency--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 3
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_wrong",
+        "mail_safety_call",
+        "mail_model",
+        "mail_end_reject_exit_keep_unknown",
+        "ending_reject_exit_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "表示を閉じても瞬きで同位置へ戻る拒否不能の導入が不安を保ち、未来の非常口を送る判断が救助と逆向きの誤誘導を同時に孕む。救助像を外すことでミナの名が避難名簿から端末17へ移された改ざんだけを残すため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。受信拒否を単なる離脱でなく同意欄・返品・証言利用の条件へ変換し、1-bitの非常口人型、逆向きの腕、透過した裏面文字を証拠へ変える。救助像を外すことでミナの名が避難名簿から端末17へ移された改ざんだけを残す点が固有である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=call_emergency--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_wrong",
+        "mail_safety_call",
+        "mail_model",
+        "mail_end_reject_exit_lend_view",
+        "ending_reject_exit_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "表示を閉じても瞬きで同位置へ戻る拒否不能の導入が不安を保ち、未来の非常口を送る判断が救助と逆向きの誤誘導を同時に孕む。未来の非常口が描いた救助者を消し、地下への一画と証言の利用限界を分けるため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。受信拒否を単なる離脱でなく同意欄・返品・証言利用の条件へ変換し、1-bitの非常口人型、逆向きの腕、透過した裏面文字を証拠へ変える。未来の非常口が描いた救助者を消し、地下への一画と証言の利用限界を分ける点が固有である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=discard_phone--choice_final=draft_only",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 5
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_wrong",
+        "mail_safety_discard",
+        "mail_model",
+        "mail_end_reject_dark_draft_only",
+        "ending_reject_dark_draft_only"
+      ],
+      "clicheSignals": [],
+      "interestReason": "表示を閉じても瞬きで同位置へ戻る拒否不能の導入が不安を保ち、閉眼して何も見せない消極策まで二万画素の0として記録される。拒否・閉眼・本人限定によって27経路で唯一読者画素0の証言へ到達するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。受信拒否を単なる離脱でなく同意欄・返品・証言利用の条件へ変換し、閉眼の黒を二万画素の0として扱い、空白・傷・時刻との照合に使う。拒否・閉眼・本人限定によって27経路で唯一読者画素0の証言へ到達する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=discard_phone--choice_final=keep_unknown",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_wrong",
+        "mail_safety_discard",
+        "mail_model",
+        "mail_end_reject_dark_keep_unknown",
+        "ending_reject_dark_keep_unknown"
+      ],
+      "clicheSignals": [],
+      "interestReason": "表示を閉じても瞬きで同位置へ戻る拒否不能の導入が不安を保ち、閉眼して何も見せない消極策まで二万画素の0として記録される。傷に見えた一画を、17台すべてで未確認を守るため引かれた横線へ反転するため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。受信拒否を単なる離脱でなく同意欄・返品・証言利用の条件へ変換し、閉眼の黒を二万画素の0として扱い、空白・傷・時刻との照合に使う。傷に見えた一画を、17台すべてで未確認を守るため引かれた横線へ反転する点が固有である。"
+    },
+    {
+      "routeId": "choice_year=wrong_address--choice_safety=discard_phone--choice_final=lend_view",
+      "interest": {
+        "hook": 4,
+        "momentum": 4,
+        "choiceTension": 4,
+        "revealPayoff": 5,
+        "endingPull": 4
+      },
+      "originality": {
+        "premiseSpecificity": 4,
+        "voiceSpecificity": 4,
+        "revealFreshness": 5,
+        "deviceIntegration": 5,
+        "clicheResistance": 5
+      },
+      "evidenceNodeIds": [
+        "mail_hook",
+        "mail_year_wrong",
+        "mail_safety_discard",
+        "mail_model",
+        "mail_end_reject_dark_lend_view",
+        "ending_reject_dark_lend_view"
+      ],
+      "clicheSignals": [],
+      "interestReason": "表示を閉じても瞬きで同位置へ戻る拒否不能の導入が不安を保ち、閉眼して何も見せない消極策まで二万画素の0として記録される。左上傷を返却済みの印と読み直し、17番を居場所でなく持出禁止の在庫指示へ変えるため、開示が選択の代償を更新する。",
+      "originalityReason": "17台の欠損1-bit像を透明なG2レンズ上で光学合成し、ミナの棚卸し語彙と三択が偽の因果を作る。受信拒否を単なる離脱でなく同意欄・返品・証言利用の条件へ変換し、閉眼の黒を二万画素の0として扱い、空白・傷・時刻との照合に使う。左上傷を返却済みの印と読み直し、17番を居場所でなく持出禁止の在庫指示へ変える点が固有である。"
+    }
+  ],
+  "forcedTests": {
+    "choice-erasure": {
+      "genericityDetected": false,
+      "reason": "初手の年・名・拒否と中盤の階段・非常口・閉眼の組合せで固有ノードと終端解釈が変わるため、最終選択だけでは主要開示を維持できない。"
+    },
+    "character-swap": {
+      "genericityDetected": false,
+      "reason": "ミナの棚卸し規則、左上傷、空欄と0の区別、橘店長との雇用関係が台詞の論理を作り、固有名詞を交換すると半数以上は同じ意味で成立しない。"
+    },
+    "device-swap": {
+      "genericityDetected": false,
+      "reason": "透明レンズ上の視界と17枚の欠損1-bit像を焦点距離や位置で重ね、閉眼画素・右上時刻・電池を照合に使うため、スマートフォン通知では同じ体験にならない。"
+    },
+    "early-prediction": {
+      "genericityDetected": false,
+      "reason": "25%地点では過去との通信と光学合成は見えるが、27経路をM-17が因果接続したことや各終端の改ざん物証までは高い確信で予測できず、後半は確認だけではない。"
+    },
+    "trope-stack": {
+      "genericityDetected": false,
+      "reason": "死者らしき送信者や不穏な端末の型はあるが、17台の欠損記録、読者視界による因果合成、空白を守る記録倫理へ具体的に変形され、未変形の類型が支配しない。"
+    },
+    "ending-paraphrase": {
+      "genericityDetected": false,
+      "reason": "終端は生存者の捏造、避難名簿から入庫票への人名移動、初期化時刻、同意のない視界利用など経路固有の物証と倫理へ着地し、指定の三種の一文には還元できない。"
+    }
+  },
+  "overallNotes": {
+    "strength": "透明なG2表示を17台の欠損1-bit記録へ重ねる行為そのものが読者による因果捏造になり、三択・閉眼・時刻・電池まで物語機構へ統合されている。",
+    "risk": "各経路内の共通部が長く、M-17の説明で選択の意味が終盤にまとめて確定する。精緻な17対応が続くため、一部終端は発見というより設計上の照合に見える。"
+  }
+}

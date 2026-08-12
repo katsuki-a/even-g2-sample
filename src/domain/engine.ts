@@ -1,5 +1,5 @@
 import type { Progress } from './progress.ts'
-import { nodeAt, type Story } from './story.ts'
+import { nodeAt, resolveNextTarget, type Story } from './story.ts'
 
 export type Command =
   | { type: 'ADVANCE' }
@@ -54,7 +54,7 @@ export function reduceStory(story: Story, progress: Progress, command: Command):
     const flags = [...new Set([...progress.flags, ...choice.effects.flags])]
     return {
       progress: {
-        ...visit(progress, choice.next),
+        ...visit(progress, resolveNextTarget(choice.next, flags)),
         choices: { ...progress.choices, [node.id]: choice.id },
         flags,
         rapport: progress.rapport + choice.effects.rapport,
@@ -67,7 +67,7 @@ export function reduceStory(story: Story, progress: Progress, command: Command):
   if (node.type === 'ending') return { progress, effects: [] }
 
   return {
-    progress: visit(progress, node.next),
+    progress: visit(progress, resolveNextTarget(node.next, progress.flags)),
     effects: ['SAVE'],
   }
 }

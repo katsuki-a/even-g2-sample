@@ -4,9 +4,9 @@
 [![Fitness](https://img.shields.io/endpoint?url=https%3A%2F%2Fkatsuki-a.github.io%2Feven-g2-sample%2Fbadges%2Ffitness.json)](./docs/fitness.md)
 [![GitHub Pages](https://github.com/katsuki-a/even-g2-sample/actions/workflows/deploy-pages.yml/badge.svg?branch=main)](https://github.com/katsuki-a/even-g2-sample/actions/workflows/deploy-pages.yml)
 
-> 最先端の眼鏡に、2008年に死んだ少女のメールが届く。返信するほど、それが彼女の文章ではなくなっていく。
+> 17台の壊れた携帯を、眼鏡越しの現実で補完する。見えた少女は、死者か、あなたが足した画素か。
 
-Even Realities G2向けの短編SFミステリーです。G2の緑色表示、三択、進捗、ENDを、死者の記録から作られた人格復元実験へ変換しています。
+Even Realities G2向けの短編SFミステリーです。透明な視界内表示、三択、200×100の1-bit画像を、欠損した事故記録へ読者の視界を混ぜる光学復元実験へ変換しています。
 
 [ブラウザで第1話「届いてる？」を試す](https://katsuki-a.github.io/even-g2-sample/)
 
@@ -14,9 +14,9 @@ Even Realities G2向けの短編SFミステリーです。G2の緑色表示、�
 
 ## 現在の状態
 
-- 第1話を実装済み。28ノード、27経路、3エンディングを収録しています。
+- 第1話を実装済み。102ノード、27経路、27エンディングを収録しています。
 - active phaseは`implementation`です。適応度スコアは上部のFitnessバッジへ自動反映されます。
-- 自動テスト、全経路検査、シミュレータ検証は完了しています。
+- 全27経路の静的検査、本番ビルド、Simulator 0.8.0での27固有END・再起動復元・添付再試行を確認済みです。改稿後のペルソナ再評価を進めています。
 - G2 / R1実機の全項目検証と5人ユーザーテストは未完了です。リリース判定の詳細は[リリース検証手順](./docs/release-validation.md)を参照してください。
 
 ## 主な特徴
@@ -25,11 +25,11 @@ Even Realities G2向けの短編SFミステリーです。G2の緑色表示、�
 | --- | --- |
 | ストーリー | 推敲済みの分岐シナリオを`content/story.json`で管理 |
 | 操作 | G2 / R1入力を上・下・決定・戻るへ正規化 |
-| 添付画像 | 通り、人物、献花、回収端末の4種類の1-bit BMPを直列送信 |
+| 添付画像 | 停電した通り、人物、事故翌日の店先、回収端末の4種類の1-bit BMPを直列送信 |
 | 復元 | 選択と現在位置を保存し、WebView再生成後も再開 |
 | ブラウザ対応 | G2ブリッジがない環境では同じ物語を電話側プレビューで実行 |
 | 最小権限 | ネットワーク、マイク、位置情報、カメラ、アルバム権限を不使用 |
-| 品質評価 | Story、Docs、Architecture、Release Evidenceを段階別に100点評価 |
+| 品質評価 | Story、Narrative Persona、Docs、Architecture、Release Evidenceを段階別に100点評価 |
 
 ## 必要環境
 
@@ -74,6 +74,9 @@ npm run simulator -- "http://localhost:5173/?simulator=true"
 | `npm run fitness` | active phaseの適応度評価 |
 | `npm run fitness:implementation` | implementation評価 |
 | `npm run fitness:release` | release評価（実機・ユーザーテスト証拠を含む） |
+| `npm run narrative:prepare` | 5人格へ渡す全27経路のブラインド評価パケットを生成 |
+| `npm run narrative:verify` | sub-agentレビューの鮮度・網羅性・面白さ・非凡庸性を検証 |
+| `npm run loop:check:narrative` | Narrative品質ゲートを含めた物語変更向け一括検証 |
 | `npm run build` | strict TypeScript検査とVite本番ビルド |
 | `npm run loop:check` | テスト、active phase評価、本番ビルドを一括実行 |
 | `npm run simulator:evidence` | シミュレータの構造化証跡を取得 |

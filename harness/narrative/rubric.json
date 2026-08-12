@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "ratingScale": {
+    "minimum": 1,
+    "maximum": 5,
+    "anchors": {
+      "1": "欠点が体験を支配し、途中離脱または強い既視感につながる",
+      "2": "機能はするが薄い、予測しやすい、または選択や固有性が装飾に留まる",
+      "3": "明確に機能し、作品固有の根拠が少なくとも1つある",
+      "4": "複数の具体的根拠があり、続きを読みたい理由または固有の変奏が強い",
+      "5": "置換困難で、同種作品の基準点になり得る"
+    }
+  },
+  "groups": {
+    "interest": {
+      "label": "面白さ",
+      "dimensions": [
+        {
+          "id": "hook",
+          "label": "導入",
+          "question": "60秒以内に異常と読む目的が伝わり、先を押したくなるか"
+        },
+        {
+          "id": "momentum",
+          "label": "推進力",
+          "question": "開示が反復せず、具体的な疑問と緊張が段階的に増えるか"
+        },
+        {
+          "id": "choiceTension",
+          "label": "選択の緊張",
+          "question": "返信に迷う理由があり、選択が後続の意味や代償へ残るか"
+        },
+        {
+          "id": "revealPayoff",
+          "label": "反転の効き",
+          "question": "正体開示が、それ以前の情報と感情の意味を更新するか"
+        },
+        {
+          "id": "endingPull",
+          "label": "終端の牽引力",
+          "question": "終端固有の問いや余韻が残り、次話を自発的に読みたくなるか"
+        }
+      ]
+    },
+    "originality": {
+      "label": "非凡庸性",
+      "dimensions": [
+        {
+          "id": "premiseSpecificity",
+          "label": "設定の固有性",
+          "question": "人名、年代、17台、三択などを置換すると物語の核が壊れるか"
+        },
+        {
+          "id": "voiceSpecificity",
+          "label": "声の固有性",
+          "question": "名前を隠してもミナまたはM-17の発話として識別できるか"
+        },
+        {
+          "id": "revealFreshness",
+          "label": "反転の新鮮さ",
+          "question": "死者通信、AI模倣、ループ、読者メタを既知の型以上へ変形しているか"
+        },
+        {
+          "id": "deviceIntegration",
+          "label": "デバイス統合",
+          "question": "G2の表示、三択、1-bit画像、視界内受信が物語機構として必要か"
+        },
+        {
+          "id": "clicheResistance",
+          "label": "既視感への抵抗",
+          "question": "終端までをありがちな一文へ短く還元できず、作品固有の代償や倫理があるか"
+        }
+      ]
+    }
+  },
+  "forcedTests": [
+    {
+      "id": "choice-erasure",
+      "question": "最終選択以外を削除しても主要開示と終端が変わらないか",
+      "genericityWhenTrue": "選択を消しても物語が同じまま成立する"
+    },
+    {
+      "id": "character-swap",
+      "question": "人物名と固有名詞を置換しても半数以上の台詞が成立するか",
+      "genericityWhenTrue": "人物を交換しても声と筋が同じまま成立する"
+    },
+    {
+      "id": "device-swap",
+      "question": "G2をスマートフォン通知へ置換しても同じ体験になるか",
+      "genericityWhenTrue": "スマートフォンへ置換しても同じ体験になる"
+    },
+    {
+      "id": "early-prediction",
+      "question": "経路の25%地点で主要反転を高い確信で予測でき、後半が確認だけになるか",
+      "genericityWhenTrue": "主要反転を序盤で予測でき、後半が確認だけになる"
+    },
+    {
+      "id": "trope-stack",
+      "question": "固有の変形がない既知の類型が3個以上重なっているか",
+      "genericityWhenTrue": "未変形の既知類型が体験を支配する"
+    },
+    {
+      "id": "ending-paraphrase",
+      "question": "終端が『止めても続く』『AIが自我を得る』『次はあなた』だけに要約できるか",
+      "genericityWhenTrue": "終端の大半がありがちな一文へ還元できる"
+    }
+  ],
+  "clicheSignals": [
+    "dead-sender-message",
+    "ai-impersonation-reveal",
+    "time-loop",
+    "simulated-choice",
+    "creepy-technology",
+    "message-to-next-reader",
+    "tragedy-as-shock"
+  ]
+}

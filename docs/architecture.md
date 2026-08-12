@@ -68,6 +68,8 @@ type Transition = {
 
 `reduceStory(story, progress, command)`は副作用を持たない。保存、画像送信、時刻待機はControllerが`Transition`を解釈して実行する。
 
+`StoryChoice.next`は通常のノードIDに加え、`cases[{ requires, next }]`を持つ条件遷移を受け付ける。選択確定後の`flags`に全条件が含まれる最初のcaseを解決し、描画ノードを一つだけ進める。これにより共通の情報開示を保ちながら、3回の選択履歴を27個の固有終端へ決定論的に写像する。Graph HarnessとNarrative Harnessも同じ条件解決規則で経路を列挙する。
+
 ## ノード種別
 
 | 種別 | 用途 | 描画 |
@@ -149,5 +151,5 @@ Hardware Labの診断UI、センサー処理、未使用権限は製品フロー
 - **Unit:** 遷移、テンプレート展開、保存マイグレーション、入力正規化
 - **Graph:** 全経路、到達可能性、終端、表示長、ビート順序
 - **Integration:** Fake Bridgeによるページ作成、画像キュー、再接続
-- **Simulator:** 最終`dist`の全27経路、各20ノード、3終端、4添付、END保持、戻る終了、再起動復元、画像失敗再試行
+- **Simulator:** 最終`dist`の全27経路、各20ノード、27終端、4添付、END保持、戻る終了、再起動復元、画像失敗再試行
 - **Hardware:** フォント、画像、R1、ロック、再起動、アイドル復帰

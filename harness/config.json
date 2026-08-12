@@ -3,22 +3,54 @@
   "passScore": 85,
   "weights": {
     "concept": {
-      "story": 80,
+      "story": 60,
       "docs": 20,
       "architecture": 0,
+      "narrative": 20,
       "release": 0
     },
     "implementation": {
-      "story": 35,
+      "story": 30,
       "docs": 10,
-      "architecture": 55,
+      "architecture": 50,
+      "narrative": 10,
       "release": 0
     },
     "release": {
-      "story": 20,
+      "story": 15,
       "docs": 10,
-      "architecture": 30,
+      "architecture": 25,
+      "narrative": 10,
       "release": 40
+    }
+  },
+  "narrative": {
+    "personasFile": "harness/narrative/personas.json",
+    "rubricFile": "harness/narrative/rubric.json",
+    "protocolFile": "harness/narrative/PROMPT.md",
+    "reviewsDir": "harness/narrative/reviews",
+    "requiredPersonas": [
+      "casual-suspense-reader",
+      "genre-veteran",
+      "interactive-fiction-designer",
+      "character-drama-reader",
+      "wearable-skeptic"
+    ],
+    "templateValues": {
+      "currentYear": "2026",
+      "playerName": "あなた"
+    },
+    "qualityGatePhases": [
+      "release"
+    ],
+    "thresholds": {
+      "minInterest": 70,
+      "minOriginality": 65,
+      "minComposite": 68,
+      "minWeakestRoute": 60,
+      "maxGenericPersonas": 2,
+      "forcedTestConsensusPersonas": 3,
+      "disagreementWarningSpread": 30
     }
   },
   "requiredDocs": [
@@ -50,6 +82,9 @@
       "build",
       "test",
       "fitness",
+      "narrative:prepare",
+      "narrative:verify",
+      "loop:check:narrative",
       "loop:check"
     ],
     "domainForbiddenTokens": [

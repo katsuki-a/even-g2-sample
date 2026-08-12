@@ -1,6 +1,6 @@
 {
   "simulator": {
-    "status": "passed",
+    "status": "completed",
     "allPaths": true,
     "restartResume": true,
     "attachmentRetry": true,
@@ -8,13 +8,10 @@
     "pathCount": 27,
     "reportPath": "output/simulator/evidence-report.json",
     "screenshotPaths": [
-      "output/simulator/route-000-ending_connected-black.png",
-      "output/simulator/route-001-ending_loop-black.png",
-      "output/simulator/route-002-ending_intrusion-black.png",
-      "output/simulator/restart-after-black.png",
-      "output/simulator/attachment-retry-error-black.png",
-      "output/simulator/attachment-retry-success-black.png",
-      "output/playwright/phone-choice-final.png"
+      "output/simulator/route-000-ending_year_stairs_keep_unknown.png",
+      "output/simulator/route-000-ending_year_stairs_keep_unknown-retained.png",
+      "output/simulator/route-222-ending_name_dark_lend_view.png",
+      "output/simulator/route-222-ending_name_dark_lend_view-retained.png"
     ]
   },
   "hardware": {

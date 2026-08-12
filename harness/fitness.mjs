@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { evaluateNarrativeReviews, loadNarrativeInputs } from './narrative.mjs'
 
 const HARNESS_DIR = path.dirname(fileURLToPath(import.meta.url))
 const DEFAULT_ROOT = path.resolve(HARNESS_DIR, '..')
@@ -25,15 +26,31 @@ function uniqueIssues(issues) {
 }
 
 function referencesFrom(node) {
-  if (node.type === 'choice') return (node.choices ?? []).map((choice) => choice.next)
-  return node.next ? [node.next] : []
+  if (node.type === 'choice') return (node.choices ?? []).flatMap((choice) => referencesFromTarget(choice.next))
+  return node.next ? referencesFromTarget(node.next) : []
+}
+
+function referencesFromTarget(target) {
+  if (typeof target === 'string') return [target]
+  return [
+    ...(target?.cases ?? []).map((item) => item.next),
+    ...(target?.fallback ? [target.fallback] : []),
+  ]
+}
+
+function resolveTarget(target, flags) {
+  if (typeof target === 'string') return target
+  const matched = (target?.cases ?? []).find((item) => (
+    Array.isArray(item.requires) && item.requires.every((flag) => flags.has(flag))
+  ))
+  return matched?.next ?? target?.fallback
 }
 
 function enumeratePaths(story, nodeMap, addGate) {
   const paths = []
   const maximumPaths = 512
 
-  function visit(nodeId, currentPath, activeIds) {
+  function visit(nodeId, currentPath, activeIds, flags) {
     if (paths.length >= maximumPaths) {
       addGate('STORY_TOO_MANY_PATHS', `経路数が${maximumPaths}を超えました`)
       return
@@ -51,18 +68,38 @@ function enumeratePaths(story, nodeMap, addGate) {
       return
     }
 
-    const references = referencesFrom(node)
-    if (references.length === 0) {
+    if (node.type === 'choice') {
+      const nextActiveIds = new Set(activeIds)
+      nextActiveIds.add(nodeId)
+      for (const choice of node.choices ?? []) {
+        const nextFlags = new Set(flags)
+        for (const flag of choice.effects?.flags ?? []) nextFlags.add(flag)
+        const reference = resolveTarget(choice.next, nextFlags)
+        if (!reference) {
+          addGate('STORY_CONDITIONAL_NEXT', `${nodeId}/${choice.id ?? '(no id)'}に一致する条件遷移がありません`)
+          continue
+        }
+        visit(reference, nextPath, nextActiveIds, nextFlags)
+      }
+      return
+    }
+
+    const reference = resolveTarget(node.next, flags)
+    if (!reference) {
+      if (node.next && typeof node.next === 'object') {
+        addGate('STORY_CONDITIONAL_NEXT', `${nodeId}に一致する条件遷移がありません`)
+        return
+      }
       addGate('STORY_DEAD_END', `${nodeId}がending以外で終端になっています`)
       return
     }
 
     const nextActiveIds = new Set(activeIds)
     nextActiveIds.add(nodeId)
-    for (const reference of references) visit(reference, nextPath, nextActiveIds)
+    visit(reference, nextPath, nextActiveIds, flags)
   }
 
-  visit(story.meta?.startNodeId, [], new Set())
+  visit(story.meta?.startNodeId, [], new Set(), new Set())
   return paths
 }
 
@@ -228,16 +265,22 @@ export function evaluateStory(story, options = {}) {
 
     if (node.type === 'choice') {
       const choices = Array.isArray(node.choices) ? node.choices : []
+      const choiceIds = new Set()
       if (choices.length < minimumChoices || choices.length > maximumChoices) {
         choicesFit = false
         addGate('STORY_CHOICE_COUNT', `${node.id}の選択肢数が${minimumChoices}〜${maximumChoices}ではありません`)
       }
-      const targets = choices.map((choice) => choice.next)
+      const targets = choices.map((choice) => JSON.stringify(choice.next))
       if (new Set(targets).size !== targets.length) {
         choiceTargetsDistinct = false
         addGate('STORY_CHOICE_TARGET', `${node.id}に同じ遷移先の選択肢があります`)
       }
       for (const choice of choices) {
+        if (!choice.id || typeof choice.id !== 'string' || choiceIds.has(choice.id)) {
+          addGate('STORY_CHOICE_ID', `${node.id}にIDのない選択肢または重複選択肢IDがあります`)
+        } else {
+          choiceIds.add(choice.id)
+        }
         if (!choice.label || characterLength(choice.label) > choiceLabelLimit) {
           choicesFit = false
           addGate('STORY_CHOICE_LABEL', `${node.id}/${choice.id ?? '(no id)'}のラベルが空か長すぎます`)
@@ -521,11 +564,41 @@ export function evaluateProject(options = {}) {
   const story = readJson(path.join(rootDir, 'content/story.json'))
   const evidence = readJson(path.join(rootDir, 'harness/evidence.json'))
   const storyResult = evaluateStory(story, { rootDir })
+  const narrativeConfig = config.narrative ?? {}
+  const narrativeInputs = loadNarrativeInputs(rootDir, narrativeConfig)
+  const narrativeResult = storyResult.hardGates.length === 0
+    ? evaluateNarrativeReviews({
+        story,
+        ...narrativeInputs,
+        config: narrativeConfig,
+        enforceQuality: (narrativeConfig.qualityGatePhases ?? []).includes(phase),
+      })
+    : {
+        score: 0,
+        sections: { interest: 0, originality: 0 },
+        hardGates: [],
+        warnings: [{ code: 'NARRATIVE_SKIPPED', message: '構造ゲート不合格のため完走経路レビューを省略しました' }],
+        stats: {
+          personas: 0,
+          requiredPersonas: narrativeConfig.requiredPersonas?.length ?? 0,
+          routes: 0,
+          reviewedRoutes: 0,
+          reviewedPersonaRoutes: 0,
+          totalPersonaRoutes: 0,
+          weakestRoute: null,
+          personaScores: [],
+          dimensionMedians: { interest: {}, originality: {} },
+          frequentCliches: [],
+          forcedTestConsensus: [],
+          mechanics: {},
+        },
+      }
   const docsResult = evaluateDocs(rootDir, config)
   const architectureResult = evaluateArchitecture(rootDir, config)
   const releaseResult = evaluateReleaseEvidence(evidence)
   const components = {
     story: storyResult,
+    narrative: narrativeResult,
     docs: docsResult,
     architecture: architectureResult,
     release: releaseResult,
@@ -563,6 +636,18 @@ function printHumanReport(report) {
     console.log(`${name.padEnd(12)} ${String(result.score).padStart(3)}/100  gates=${result.hardGates.length} warnings=${result.warnings.length}`)
     if (name === 'story') {
       console.log(`  nodes=${result.stats.nodes} paths=${result.stats.paths} endings=${result.stats.endings} pathLengths=${result.stats.pathLengths.join(',')}`)
+    }
+    if (name === 'narrative') {
+      console.log(`  interest=${result.sections.interest} originality=${result.sections.originality} personas=${result.stats.personas}/${result.stats.requiredPersonas} routes=${result.stats.reviewedRoutes}/${result.stats.routes}`)
+      if (result.stats.weakestRoute) {
+        console.log(`  weakest=${result.stats.weakestRoute.routeId} (${result.stats.weakestRoute.composite})`)
+      }
+      if (result.stats.frequentCliches?.length > 0) {
+        const frequent = result.stats.frequentCliches.slice(0, 3)
+          .map((item) => `${item.signal}:${item.personaCount}/${result.stats.requiredPersonas}`)
+          .join(', ')
+        console.log(`  cliches=${frequent}`)
+      }
     }
   }
   if (report.hardGates.length > 0) {

@@ -14,7 +14,7 @@ function advanceToDecision(progress: Progress): Progress {
   }
 }
 
-test('全27経路が20ノードで3種類の終端へ到達する', () => {
+test('全27経路が20ノードで27種類の終端へ到達する', () => {
   const completed: Progress[] = []
 
   function explore(input: Progress): void {
@@ -37,11 +37,7 @@ test('全27経路が20ノードで3種類の終端へ到達する', () => {
 
   explore(createProgress(episodeOne))
   assert.equal(completed.length, 27)
-  assert.deepEqual(new Set(completed.map((progress) => progress.currentNodeId)), new Set([
-    'ending_saved',
-    'ending_unwritten',
-    'ending_recipient',
-  ]))
+  assert.equal(new Set(completed.map((progress) => progress.currentNodeId)).size, 27)
   assert.ok(completed.every((progress) => progress.visitedNodeIds.length === 20))
 })
 
@@ -56,11 +52,28 @@ test('選択は周回し、効果と確定地点を一度だけ保存する', ()
   assert.deepEqual(transition.effects, ['SAVE'])
 })
 
+test('通常ノードの条件遷移が、それまでの二選択を中盤で呼び戻す', () => {
+  let progress = advanceToDecision(createProgress(episodeOne))
+  progress = reduceStory(episodeOne, progress, { type: 'SET_SELECTION', index: 2 }).progress
+  progress = reduceStory(episodeOne, progress, { type: 'CONFIRM_CHOICE' }).progress
+  progress = advanceToDecision(progress)
+  progress = reduceStory(episodeOne, progress, { type: 'SET_SELECTION', index: 1 }).progress
+  progress = reduceStory(episodeOne, progress, { type: 'CONFIRM_CHOICE' }).progress
+
+  while (!progress.currentNodeId.startsWith('attachment_memorial_')) {
+    progress = reduceStory(episodeOne, progress, { type: 'ADVANCE' }).progress
+  }
+  progress = reduceStory(episodeOne, progress, { type: 'ADVANCE' }).progress
+
+  assert.equal(progress.currentNodeId, 'mail_record_name_exit')
+  assert.deepEqual(progress.flags, ['named-mina-first', 'advised-shelter'])
+})
+
 test('ENDは決定で表示を保持し、戻る操作だけが正規終了する', () => {
   const endingProgress = {
     ...createProgress(episodeOne),
-    currentNodeId: 'ending_saved',
-    visitedNodeIds: ['mail_hook', 'ending_saved'],
+    currentNodeId: 'ending_year_stairs_keep_unknown',
+    visitedNodeIds: ['mail_hook', 'ending_year_stairs_keep_unknown'],
   }
 
   assert.deepEqual(reduceStory(episodeOne, endingProgress, { type: 'ADVANCE' }).effects, [])

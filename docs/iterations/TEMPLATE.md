@@ -24,6 +24,17 @@ npm run loop:check
 - ハードゲート:
 - 変更後スコア:
 
+## Narrative Persona Review
+
+- input digest:
+- 人格数 / 経路数:
+- 面白さ / 非凡庸性 / 総合:
+- 人格別点:
+- 最低経路:
+- 頻出するありがちな類型:
+- 3人格以上が検出した強制テスト:
+- 評価不一致:
+
 ## 人手確認
 
 - 環境: browser / simulator / G2 / G2+R1

@@ -23,6 +23,9 @@
 npm test
 npm run fitness
 npm run loop:check
+npm run narrative:prepare
+npm run narrative:verify
+npm run loop:check:narrative
 
 # 次段階を先取りして不足を見る
 npm run fitness:implementation
@@ -92,6 +95,12 @@ npm run fitness:release
 3. ミナ以外でも言える文を人物固有の観察へ置き換える。
 4. 選択直後の返信が選択を認識しているか確認する。
 5. 全経路を読み、情報開示順を評価する。
+6. `npm run narrative:prepare`で現在の全完走経路を固定する。
+7. 5つの独立sub-agentへ担当パケットだけを渡し、他人格の点数を見せずに採点する。
+8. 生レビューを`harness/narrative/reviews/`へ保存し、`npm run loop:check:narrative`でNarrative品質、通常fitness、テスト、ビルドを一括確認する。
+9. iteration logへinput digest、人格別点、面白さ、非凡庸性、最低経路を記録する。
+
+台詞または遷移を変えたら既存レビューは失効する。点数を見た後に閾値を下げず、最低軸を次ループの単一仮説として扱う。sub-agentは作者資料や他人格の評価を読まないブラインド入力とし、実ユーザー評価は別途残す。
 
 ## 実装のループ
 
@@ -112,4 +121,4 @@ npm run fitness:release
 
 ## 現在の次ループ
 
-`implementation`の自動ゲートは100点で完了し、Even Hub Simulator 0.8.0でも最終`dist`の全27経路、3終端、再起動復元、画像失敗再試行、正規終了を確認済み。次は実機G2/R1で入力、ロック、2分アイドル、画像失敗復旧を確認し、5人テストと物語の人手評価を埋めて`release`へ昇格する。
+旧稿の5人格評価52点を受け、全選択を27固有終端へ残す条件遷移、ミナの在庫用語、G2透明表示を使う光学復元へ改稿した。Simulator 0.8.0では全27経路、27終端、再起動復元、画像失敗再試行を確認済み。現在は改稿後の5人格ブラインド再評価を行い、その後に実機G2/R1で入力、ロック、2分アイドル、画像失敗復旧を確認する。

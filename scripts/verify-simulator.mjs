@@ -206,16 +206,25 @@ function expectedPath(choiceIndexes, stopAt) {
   const nodeIds = []
   let choiceOffset = 0
   let node = nodes.get(storySource.meta.startNodeId)
+  const flags = new Set()
   while (node) {
     nodeIds.push(node.id)
     if (node.id === stopAt || node.type === 'ending') break
     if (node.type === 'choice') {
-      node = nodes.get(node.choices[choiceIndexes[choiceOffset++] ?? 0].next)
+      const choice = node.choices[choiceIndexes[choiceOffset++] ?? 0]
+      for (const flag of choice.effects?.flags ?? []) flags.add(flag)
+      node = nodes.get(resolveTarget(choice.next, flags))
     } else {
-      node = nodes.get(node.next)
+      node = nodes.get(resolveTarget(node.next, flags))
     }
   }
   return nodeIds
+}
+
+function resolveTarget(target, flags) {
+  if (typeof target === 'string') return target
+  return target.cases.find((item) => item.requires.every((flag) => flags.has(flag)))?.next
+    ?? target.fallback
 }
 
 async function waitForAttachment(feed, marker = 0) {
